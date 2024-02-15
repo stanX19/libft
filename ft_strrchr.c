@@ -6,7 +6,7 @@
 /*   By: stan <shatan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 21:47:11 by stan              #+#    #+#             */
-/*   Updated: 2024/02/14 19:30:59 by stan             ###   ########.fr       */
+/*   Updated: 2024/02/15 20:06:56 by stan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strrchr(const char *s, int c)
 	while (i >= 0)
 	{
 		if (s[i] == (unsigned char)c)
-			return ((char *)&s[i]);
+			return ((char *)s + i);
 		--i;
 	}
 	return (0);

@@ -29,8 +29,8 @@ SRCS			= $(addprefix $(SRCDIR)/,\
 	ft_putstr_fd.c \
 	ft_split.c \
 	ft_strchr.c \
+	ft_strcpy.c \
 	ft_strdup.c \
-	ft_strndup.c \
 	ft_striteri.c \
 	ft_strjoin.c \
 	ft_strlcat.c \
@@ -38,6 +38,7 @@ SRCS			= $(addprefix $(SRCDIR)/,\
 	ft_strlen.c \
 	ft_strmapi.c \
 	ft_strncmp.c \
+	ft_strndup.c \
 	ft_strnstr.c \
 	ft_strrchr.c \
 	ft_strtrim.c \
