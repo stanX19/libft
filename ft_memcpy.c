@@ -6,7 +6,7 @@
 /*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 15:20:08 by stan              #+#    #+#             */
-/*   Updated: 2024/03/04 18:44:38 by shatan           ###   ########.fr       */
+/*   Updated: 2024/03/07 09:54:25 by shatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	char	*dest;
 	char	*source;
 
+	if (!dst && !src && n)
+		return (0);
 	dest = (char *)dst;
 	source = (char *)src;
 	i = -1;
-	if (!dst || !src)
-		return (dest);
 	while (++i < n)
 		dest[i] = source[i];
 	return (dest);
