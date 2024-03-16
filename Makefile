@@ -70,22 +70,27 @@ all: $(NAME)
 
 bonus: $(NAME)
 
-$(TESTER):
-	git clone https://github.com/FranFrau/Supreme-Tester-Libft $(TESTER)
-	cd $(TESTER); sh tester.sh
-	export FILE=$(TESTER_SUB)/my_config.sh; sed "s|PATH_LIBFT=\"\.\./\"|PATH_LIBFT=\"$$(pwd)\"|g" $$FILE > temp; cat temp > $$FILE; $(RM) temp
-
 # $(TESTER):
-# 	git clone https://github.com/Tripouille/libftTester.git $(TESTER)
+# 	git clone https://github.com/FranFrau/Supreme-Tester-Libft $(TESTER)
+# 	cd $(TESTER); sh tester.sh
+# 	export FILE=$(TESTER_SUB)/my_config.sh; sed "s|PATH_LIBFT=\"\.\./\"|PATH_LIBFT=\"$$(pwd)\"|g" $$FILE > temp; cat temp > $$FILE; $(RM) temp
 
 # test: $(TESTER)
-# 	make -C $(TESTER) a
+# 	cd $(TESTER); sh tester.sh
 
-# rename:
-#	find . -type f -name "ft_lst*" | while read -r file; do new_file="$${file%.c}.c"; mv $$file $$new_file; done;
+# tclean:
+# 	@$(RM) $(TESTER) libftTester ../libft-unit-test ../libft_tester
+
+$(TESTER):
+	git clone https://github.com/Tripouille/libftTester.git $(TESTER)
 
 test: $(TESTER)
-	cd $(TESTER); sh tester.sh
+	make -C $(TESTER) a
+
+tclean:
+	@$(RM) $(TESTER)
+# rename:
+#	find . -type f -name "ft_lst*" | while read -r file; do new_file="$${file%.c}.c"; mv $$file $$new_file; done;
 
 $(NAME): $(OBJS)
 	@ar rcs $(NAME) $(OBJS)
@@ -109,9 +114,9 @@ fclean: clean
 	@$(RM) $(NAME)
 #@$(RM) $(TESTER)
 
-tclean:
-	@$(RM) $(TESTER) libftTester ../libft-unit-test ../libft_tester
+push:
+	@echo -n "Commit name: "; read name; make fclean; make tclean; git add .; git commit -m "$$name"; git push
 
 re: fclean $(NAME)
 
-.PHONY: all clean fclean re test
+.PHONY: all clean fclean re test tclean push
