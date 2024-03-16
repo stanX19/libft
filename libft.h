@@ -6,7 +6,7 @@
 /*   By: stan <shatan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 21:43:42 by stan              #+#    #+#             */
-/*   Updated: 2024/03/16 20:16:21 by stan             ###   ########.fr       */
+/*   Updated: 2024/03/16 20:55:21 by stan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,5 +70,10 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+void	ft_swap(void *a, void *b, size_t size);
+void	ft_int_swap(int *a, int *b);
+void	ft_char_swap(char *a, char *b);
+char	*ft_strrev(char *s);
+char	*ft_strnrev(char *s, size_t n);
 
 #endif

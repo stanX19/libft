@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strnrev.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stan <shatan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/26 13:20:57 by stan              #+#    #+#             */
-/*   Updated: 2024/03/16 21:28:14 by stan             ###   ########.fr       */
+/*   Created: 2024/03/16 21:25:49 by stan              #+#    #+#             */
+/*   Updated: 2024/03/16 21:27:51 by stan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+char	*ft_strnrev(char *s, size_t n)
 {
-	const char	*cpy;
+	char	*p2;
+	char	tmp;
 
-	cpy = s - 1;
-	while (*(++cpy))
-		;
-	return (cpy - s);
+	p2 = s + n - 1;
+	while (s < p2)
+	{
+		tmp = *s;
+		*s++ = *p2;
+		*p2-- = tmp;
+	}
+	return (s);
 }

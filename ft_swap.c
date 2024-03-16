@@ -1,23 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stan <shatan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/26 13:20:57 by stan              #+#    #+#             */
-/*   Updated: 2024/03/16 21:28:14 by stan             ###   ########.fr       */
+/*   Created: 2024/03/16 21:25:13 by stan              #+#    #+#             */
+/*   Updated: 2024/03/16 21:26:34 by stan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+void	ft_swap(void *a, void *b, size_t size)
 {
-	const char	*cpy;
+	char	*temp;
 
-	cpy = s - 1;
-	while (*(++cpy))
-		;
-	return (cpy - s);
+	temp = (char *)malloc(size);
+	memcpy(temp, a, size);
+	memcpy(a, b, size);
+	memcpy(b, temp, size);
+	free(temp);
+}
+
+void	ft_int_swap(int *a, int *b)
+{
+	*a ^= *b;
+	*b ^= *a;
+	*a ^= *b;
+}
+
+void	ft_char_swap(char *a, char *b)
+{
+	*a ^= *b;
+	*b ^= *a;
+	*a ^= *b;
 }
