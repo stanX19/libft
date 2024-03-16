@@ -6,7 +6,7 @@
 /*   By: stan <shatan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 13:20:57 by stan              #+#    #+#             */
-/*   Updated: 2024/02/15 19:51:28 by stan             ###   ########.fr       */
+/*   Updated: 2024/03/16 20:14:32 by stan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,10 @@
 
 size_t	ft_strlen(const char *s)
 {
-	int	i;
+	const char *cpy;
 
-	if (!s)
-		return 0;
-	i = 0;
-	while (s[i])
-		++i;
-	return (i);
+	cpy = s - 1;
+	while (*(++cpy))
+		;
+	return (cpy - s);
 }

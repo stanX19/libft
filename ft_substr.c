@@ -6,7 +6,7 @@
 /*   By: stan <shatan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 11:23:26 by stan              #+#    #+#             */
-/*   Updated: 2024/02/15 14:07:57 by stan             ###   ########.fr       */
+/*   Updated: 2024/03/16 20:14:44 by stan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*ret;
 	size_t	dstsize;
 
-	if (!s)
-		return (0);
 	dstsize = 0;
 	while (dstsize < len + start && s[dstsize])
 		dstsize++;

@@ -6,7 +6,7 @@
 /*   By: stan <shatan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/04 16:35:53 by stan              #+#    #+#             */
-/*   Updated: 2024/02/14 20:18:57 by stan             ###   ########.fr       */
+/*   Updated: 2024/03/16 20:13:32 by stan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	int		i;
 
 	i = 0;
-	if (!s || !f)
-		return (0);
 	ret = malloc(ft_strlen(s) + 1);
 	if (!ret)
 		return (0);

@@ -62,7 +62,8 @@ NAME			= libft.a
 UP				= \033[1A
 FLUSH			= \033[2K
 
-TESTER			= libftTester
+TESTER	= Tester
+TESTER_SUB		= $(TESTER)/libft-war-machine
 
 
 all: $(NAME)
@@ -70,15 +71,30 @@ all: $(NAME)
 bonus: $(NAME)
 
 $(TESTER):
-	git clone https://github.com/Tripouille/libftTester.git $(TESTER)
+	git clone https://github.com/FranFrau/Supreme-Tester-Libft $(TESTER)
+	cd $(TESTER); sh tester.sh
+	export FILE=$(TESTER_SUB)/my_config.sh; sed "s|PATH_LIBFT=\"\.\./\"|PATH_LIBFT=\"$$(pwd)\"|g" $$FILE > temp; cat temp > $$FILE; $(RM) temp
+
+# $(TESTER):
+# 	git clone https://github.com/Tripouille/libftTester.git $(TESTER)
+
+# test: $(TESTER)
+# 	make -C $(TESTER) a
+
+# rename:
+#	find . -type f -name "ft_lst*" | while read -r file; do new_file="$${file%.c}.c"; mv $$file $$new_file; done;
 
 test: $(TESTER)
-	make -C $(TESTER) a
+	cd $(TESTER); sh tester.sh
 
 $(NAME): $(OBJS)
 	@ar rcs $(NAME) $(OBJS)
 
-$(OBJDIRS):
+$(OBJDIR):
+	mkdir -p $@
+	@echo "$(UP)$(FLUSH)$(UP)"
+
+$(OBJDIRS): $(OBJDIR)
 	mkdir -p $@
 	@echo "$(UP)$(FLUSH)$(UP)"
 
@@ -87,12 +103,15 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.c $(HEADERS) | $(OBJDIRS)
 	@echo "$(UP)$(FLUSH)$(UP)"
 
 clean:
-	@$(RM) $(OBJDIR)
+	@$(RM) $(OBJS)
 
 fclean: clean
 	@$(RM) $(NAME)
-	@$(RM) $(TESTER)
+#@$(RM) $(TESTER)
+
+tclean:
+	@$(RM) $(TESTER) libftTester ../libft-unit-test ../libft_tester
 
 re: fclean $(NAME)
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re test

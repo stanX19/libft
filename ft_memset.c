@@ -6,7 +6,7 @@
 /*   By: stan <shatan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 14:49:23 by stan              #+#    #+#             */
-/*   Updated: 2024/02/15 18:45:09 by stan             ###   ########.fr       */
+/*   Updated: 2024/03/16 20:15:53 by stan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ void	*ft_memset(void *b, int c, size_t len)
 	size_t	i;
 	char	*ptr;
 
-	if (!b)
-		return (0);
 	ptr = (char *)b;
 	i = 0;
 	while (i < len)

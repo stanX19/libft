@@ -6,7 +6,7 @@
 /*   By: stan <shatan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 12:09:28 by stan              #+#    #+#             */
-/*   Updated: 2024/02/14 20:04:27 by stan             ###   ########.fr       */
+/*   Updated: 2024/03/16 20:15:29 by stan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	retsize;
 
 	retsize = ft_strlen(s1) + ft_strlen(s2) + 1;
-	if (!s1 || !s2)
-		return (0);
 	ret = malloc(sizeof(char) * retsize);
 	if (!ret)
 		return (0);
