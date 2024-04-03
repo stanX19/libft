@@ -1,19 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stan <shatan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/04 20:52:36 by stan              #+#    #+#             */
-/*   Updated: 2024/03/16 20:15:43 by stan             ###   ########.fr       */
+/*   Created: 2024/03/16 21:25:13 by stan              #+#    #+#             */
+/*   Updated: 2024/03/16 21:26:34 by stan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl_fd(char *s, int fd)
+void	ft_swap(void *a, void *b, size_t size)
 {
-	ft_putstr_fd(s, fd);
-	write(fd, "\n", 1);
+	char	*temp;
+
+	temp = (char *)malloc(size);
+	memcpy(temp, a, size);
+	memcpy(a, b, size);
+	memcpy(b, temp, size);
+	free(temp);
+}
+
+void	ft_int_swap(int *a, int *b)
+{
+	*a ^= *b;
+	*b ^= *a;
+	*a ^= *b;
+}
+
+void	ft_char_swap(char *a, char *b)
+{
+	*a ^= *b;
+	*b ^= *a;
+	*a ^= *b;
 }
