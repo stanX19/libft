@@ -90,15 +90,13 @@ test: $(TESTER)
 $(NAME): $(OBJS)
 	@ar rcs $(NAME) $(OBJS)
 
-$(OBJDIR):
+$(OBJDIRS):
+	mkdir -p $(OBJDIR)
+	@echo "$(UP)$(FLUSH)$(UP)"
 	mkdir -p $@
 	@echo "$(UP)$(FLUSH)$(UP)"
 
-$(OBJDIRS): $(OBJDIR)
-	mkdir -p $@
-	@echo "$(UP)$(FLUSH)$(UP)"
-
-$(OBJDIR)/%.o: $(SRCDIR)/%.c $(HEADERS) | $(OBJDIRS)
+$(OBJDIR)/%.o: $(SRCDIR)/%.c | $(HEADERS) $(OBJDIRS)
 	$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $@
 	@echo "$(UP)$(FLUSH)$(UP)"
 
@@ -114,4 +112,8 @@ tclean:
 
 re: fclean $(NAME)
 
-.PHONY: all clean fclean re test
+push:
+	@echo -n "Commit name: "; read name; make fclean;\
+	git add .; git commit -m "$$name"; git push;\
+
+.PHONY: all clean fclean re test push
