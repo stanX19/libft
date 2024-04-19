@@ -1,35 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_print_hex_lower.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stan <shatan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/06 12:31:46 by stan              #+#    #+#             */
-/*   Updated: 2024/02/14 22:30:37 by stan             ###   ########.fr       */
+/*   Created: 2024/02/15 18:37:26 by stan              #+#    #+#             */
+/*   Updated: 2024/03/11 13:40:57 by stan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf_private.h"
 
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+void	print_hex_lower(t_format format, va_list *argv, size_t *len)
 {
-	t_list	*new_node;
-	t_list	*ret;
+	unsigned int	val;
+	char			buf[25];
 
-	if (!lst)
-		return (0);
-	ret = 0;
-	while (lst)
-	{
-		new_node = ft_lstnew(f(lst->content));
-		if (!new_node)
-		{
-			ft_lstclear(&new_node, del);
-			return (0);
-		}
-		ft_lstadd_back(&ret, new_node);
-		lst = lst->next;
-	}
-	return (ret);
+	val = va_arg(*argv, unsigned int);
+	if (format.hash && val > 0)
+		format.prefix = "0x";
+	get_unsigned_nbr_base(val, buf, "0123456789abcdef");
+	print_buf_int_fmt(format, buf, len);
 }

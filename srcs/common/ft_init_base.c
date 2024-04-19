@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_init_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stan <shatan@student.42kl.edu.my>          +#+  +:+       +#+        */
+/*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/05 23:03:56 by stan              #+#    #+#             */
-/*   Updated: 2024/02/14 22:31:34 by stan             ###   ########.fr       */
+/*   Created: 2024/04/18 16:56:52 by shatan            #+#    #+#             */
+/*   Updated: 2024/04/18 16:56:52 by shatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_lstsize(t_list *lst)
+t_base	ft_init_base(const char *base)
 {
-	int	ret;
+	t_base	ret;
 
-	ret = 0;
-	while (lst != 0)
-	{
-		++ret;
-		lst = lst->next;
-	}
+	ret.str = base;
+	ret.nbr = ft_strlen(base);
 	return (ret);
 }

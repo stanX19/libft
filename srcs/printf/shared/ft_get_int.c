@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_get_int.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stan <shatan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/26 21:36:48 by stan              #+#    #+#             */
-/*   Updated: 2024/02/14 19:30:59 by stan             ###   ########.fr       */
+/*   Created: 2024/02/15 18:25:17 by stan              #+#    #+#             */
+/*   Updated: 2024/03/16 21:09:07 by stan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf_private.h"
 
-char	*ft_strchr(const char *s, int c)
+size_t	get_int(t_format *format, long long int nbr, char *buf)
 {
-	while (*s)
+	unsigned long long int	val;
+
+	val = nbr;
+	if (nbr < 0)
 	{
-		if (*s == (unsigned char)c)
-			return ((char *)s);
-		++s;
+		format->prefix = "-";
+		val = -nbr;
 	}
-	if (*s == (unsigned char)c)
-		return ((char *)s);
-	return (0);
+	return (get_unsigned_nbr_base(val, buf, "0123456789"));
 }

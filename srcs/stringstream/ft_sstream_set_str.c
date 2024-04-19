@@ -1,19 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_sstream_set_str.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stan <shatan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/24 21:43:42 by stan              #+#    #+#             */
-/*   Updated: 2024/04/19 12:31:12 by stan             ###   ########.fr       */
+/*   Created: 2024/04/18 15:46:28 by shatan            #+#    #+#             */
+/*   Updated: 2024/04/19 11:55:49 by stan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-# include "common.h"
-# include "ft_printf.h"
-# include "stringstream.h"
+#include "stringstream.h"
 
-#endif
+t_stringstream	*sstream_set_str(t_stringstream *ss, const char *str)
+{
+	if (ss == NULL)
+	{
+		return (NULL);
+	}
+	free(ss->str);
+	ss->str = ft_strdup(str);
+	ss->pos = ss->str;
+	ss->flag = 0;
+	return (ss);
+}

@@ -1,19 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_printf_putstr.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stan <shatan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/24 21:43:42 by stan              #+#    #+#             */
-/*   Updated: 2024/04/19 12:31:12 by stan             ###   ########.fr       */
+/*   Created: 2024/02/15 18:39:26 by stan              #+#    #+#             */
+/*   Updated: 2024/03/09 16:59:27 by stan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-# include "common.h"
-# include "ft_printf.h"
-# include "stringstream.h"
+#include "ft_printf_private.h"
 
-#endif
+void	ft_printf_putstr(const char *str, size_t *len)
+{
+	size_t	idx;
+
+	idx = ft_strlen(str);
+	*len += idx;
+	write(1, str, idx);
+}
+
+void	ft_printf_putnstr(const char *str, int n, size_t *len)
+{
+	if (n <= 0)
+		return ;
+	*len += n;
+	write(1, str, n);
+}

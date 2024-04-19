@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_tokens_len.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stan <shatan@student.42kl.edu.my>          +#+  +:+       +#+        */
+/*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/06 11:43:51 by stan              #+#    #+#             */
-/*   Updated: 2024/02/14 18:05:35 by stan             ###   ########.fr       */
+/*   Created: 2024/04/12 23:02:55 by stan              #+#    #+#             */
+/*   Updated: 2024/04/18 14:24:09 by shatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstdelone(t_list *lst, void (*del)(void *))
+size_t	ft_tokens_len(char **tokens)
 {
-	if (!lst || !del)
-		return ;
-	del(lst->content);
-	free(lst);
+	int	i;
+
+	i = 0;
+	while (tokens[i])
+	{
+		i++;
+	}
+	return (i);
 }

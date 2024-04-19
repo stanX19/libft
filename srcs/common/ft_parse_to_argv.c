@@ -1,19 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_parse_to_argv.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stan <shatan@student.42kl.edu.my>          +#+  +:+       +#+        */
+/*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/24 21:43:42 by stan              #+#    #+#             */
-/*   Updated: 2024/04/19 12:31:12 by stan             ###   ########.fr       */
+/*   Created: 2024/04/17 14:53:57 by shatan            #+#    #+#             */
+/*   Updated: 2024/04/18 14:24:15 by shatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-# include "common.h"
-# include "ft_printf.h"
-# include "stringstream.h"
+#include "libft.h"
 
-#endif
+char	**ft_str_to_args(const char *str, int *argc)
+{
+	char	**ret;
+
+	ret = ft_split(str, ' ');
+	*argc = ft_tokens_len(ret);
+	return (ret);
+}

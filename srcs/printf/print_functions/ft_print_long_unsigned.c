@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_print_long_unsigned.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stan <shatan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/05 23:09:08 by stan              #+#    #+#             */
-/*   Updated: 2024/02/14 19:30:59 by stan             ###   ########.fr       */
+/*   Created: 2024/02/15 18:32:30 by stan              #+#    #+#             */
+/*   Updated: 2024/03/11 13:40:57 by stan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf_private.h"
 
-t_list	*ft_lstlast(t_list *lst)
+void	print_long_unsigned(t_format format, va_list *argv, size_t *len)
 {
-	if (!lst)
-		return (0);
-	while (lst->next != 0)
-	{
-		lst = lst->next;
-	}
-	return (lst);
+	long unsigned int	val;
+	char				buf[50];
+
+	val = va_arg(*argv, long unsigned int);
+	get_unsigned_nbr_base(val, buf, "0123456789");
+	print_buf_int_fmt(format, buf, len);
 }

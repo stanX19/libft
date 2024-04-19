@@ -1,36 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_print_long_int.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stan <shatan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/02 21:10:38 by stan              #+#    #+#             */
-/*   Updated: 2024/02/14 22:32:26 by stan             ###   ########.fr       */
+/*   Created: 2024/02/15 18:35:57 by stan              #+#    #+#             */
+/*   Updated: 2024/03/11 13:40:57 by stan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf_private.h"
 
-int	ft_atoi(const char *str)
+void	print_long_int(t_format format, va_list *argv, size_t *len)
 {
-	int		sign;
-	int		ret;
+	long int	val;
+	char		buf[50];
 
-	ret = 0;
-	sign = 1;
-	while ((*str >= 9 && *str <= 13) || *str == ' ')
-		++str;
-	if (*str == '-' || *str == '+')
-	{
-		if (*str == '-')
-			sign *= -1;
-		++str;
-	}
-	while (*str >= '0' && *str <= '9')
-	{
-		ret = (ret * 10) + (*str - '0');
-		++str;
-	}
-	return (sign * ret);
+	val = va_arg(*argv, long int);
+	get_int(&format, val, buf);
+	print_buf_int_fmt(format, buf, len);
 }

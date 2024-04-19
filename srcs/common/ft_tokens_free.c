@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_tokens_free.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stan <shatan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/24 21:43:42 by stan              #+#    #+#             */
-/*   Updated: 2024/04/19 12:31:12 by stan             ###   ########.fr       */
+/*   Created: 2024/04/12 22:50:33 by stan              #+#    #+#             */
+/*   Updated: 2024/04/12 23:20:12 by stan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-# include "common.h"
-# include "ft_printf.h"
-# include "stringstream.h"
+#include "libft.h"
 
-#endif
+void	ft_tokens_free(char **tokens)
+{
+	int	i;
+
+	i = 0;
+	while (tokens[i])
+	{
+		free(tokens[i++]);
+	}
+	free(tokens);
+}

@@ -6,7 +6,7 @@
 /*   By: stan <shatan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/04 21:37:48 by stan              #+#    #+#             */
-/*   Updated: 2024/02/15 16:35:03 by stan             ###   ########.fr       */
+/*   Updated: 2024/04/12 23:20:12 by stan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,30 +30,44 @@ static int	word_count(char const *str, char delim)
 	return (count);
 }
 
-char	**ft_split(char const *str, char delim)
+static int	fill_ret(char **ret, char const *str, char c)
 {
-	char	**ret;
-	int		start_idx;
-	int		idx;
-	int		ret_idx;
+	int	start_idx;
+	int	idx;
+	int	ret_idx;
 
-	if (!str)
-		return (0);
-	ret = malloc(sizeof(char *) * (word_count(str, delim) + 1));
-	if (!ret)
-		return (0);
 	idx = 0;
 	ret_idx = 0;
+	start_idx = 0;
 	while (str[idx])
 	{
-		if (str[idx] != delim && (idx == 0 || str[idx - 1] == delim))
-			start_idx = idx;
-		else if (str[idx] == delim && (idx != 0 && str[idx - 1] != delim))
-			ret[ret_idx++] = ft_substr(str, start_idx, idx - start_idx);
+		if (str[idx] == c)
+			start_idx = idx + 1;
+		else if (!str[idx + 1] || str[idx + 1] == c)
+		{
+			ret[ret_idx] = ft_substr(str, start_idx, idx + 1 - start_idx);
+			if (ret[ret_idx++] == 0)
+				return (-1);
+		}
 		idx++;
 	}
-	if (idx != 0 && str[idx - 1] != delim)
-		ret[ret_idx++] = ft_substr(str, start_idx, idx - start_idx);
 	ret[ret_idx] = 0;
+	return (0);
+}
+
+char	**ft_split(char const *str, char c)
+{
+	char	**ret;
+
+	if (!str)
+		return (NULL);
+	ret = malloc(sizeof(char *) * (word_count(str, c) + 1));
+	if (!ret)
+		return (NULL);
+	if (fill_ret(ret, str, c))
+	{
+		ft_tokens_free(ret);
+		ret = NULL;
+	}
 	return (ret);
 }

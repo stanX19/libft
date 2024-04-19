@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_print_percent.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stan <shatan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/05 22:27:10 by stan              #+#    #+#             */
-/*   Updated: 2024/02/14 18:05:35 by stan             ###   ########.fr       */
+/*   Created: 2024/02/15 18:31:24 by stan              #+#    #+#             */
+/*   Updated: 2024/03/16 19:29:50 by stan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf_private.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+void	print_percent(t_format format, va_list *argv, size_t *idx)
 {
-	if (!lst || !new)
-		return ;
-	new->next = *lst;
-	*lst = new;
+	(void)argv;
+	format.precicion = -1;
+	format.prefix = "";
+	if (IS_APPLE)
+		print_buf_int_fmt(format, "%", idx);
+	else
+		ft_printf_putchar('%', idx);
 }
