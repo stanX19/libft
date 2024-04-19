@@ -6,13 +6,14 @@
 /*   By: stan <shatan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 14:50:34 by shatan            #+#    #+#             */
-/*   Updated: 2024/04/19 12:13:06 by stan             ###   ########.fr       */
+/*   Updated: 2024/04/19 13:36:12 by stan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STRINGSTREAM_H
 # define STRINGSTREAM_H
 # include "common.h"
+# include "ft_printf.h"
 
 typedef struct	s_stringstream
 {
