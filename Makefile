@@ -55,10 +55,14 @@ push:
 	@echo -n "Commit name: "; read name; make fclean;\
 	git add .; git commit -m "$$name"; git push;
 
+BRANCH := $(shell git rev-parse --abbrev-ref HEAD)
+ifeq ($(BRANCH),HEAD)
+BRANCH := main
+endif
 pull:
 	git fetch --all
-	git reset --hard origin/main
-	git reset --soft main
+	git checkout -f $(BRANCH);
+	git reset --hard origin/$(BRANCH);
 	git submodule update --init --remote --recursive
 
 .PHONY: all clean fclean re bonus push
