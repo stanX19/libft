@@ -6,13 +6,13 @@
 /*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 16:27:06 by shatan            #+#    #+#             */
-/*   Updated: 2024/04/18 16:28:06 by shatan           ###   ########.fr       */
+/*   Updated: 2024/04/20 17:13:11 by shatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isspace(int c)
+bool	ft_isspace(int c)
 {
 	return ((c >= 9 && c <= 13) || c == ' ');
 }

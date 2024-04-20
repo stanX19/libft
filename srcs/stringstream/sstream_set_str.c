@@ -1,22 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sstream_destory.c                               :+:      :+:    :+:   */
+/*   sstream_set_str.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stan <shatan@student.42kl.edu.my>          +#+  +:+       +#+        */
+/*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/19 14:10:00 by stan              #+#    #+#             */
-/*   Updated: 2024/04/19 14:10:04 by stan             ###   ########.fr       */
+/*   Created: 2024/04/18 15:46:28 by shatan            #+#    #+#             */
+/*   Updated: 2024/04/20 16:29:15 by shatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "stringstream.h"
 
-void	sstream_destroy(t_stringstream *ss)
+// reassigns str for stringstream
+t_stringstream	*sstream_set_str(t_stringstream *ss, const char *str)
 {
 	if (ss == NULL)
-		return ;
-	if (ss->str != NULL)
-		free(ss->str);
-	free(ss);
+	{
+		return (NULL);
+	}
+	if (ss->str != str)
+	{
+		if (ss->str != NULL)
+			free(ss->str);
+		ss->str = ft_strdup(str);
+	}
+	ss->pos = ss->str;
+	return (ss);
 }

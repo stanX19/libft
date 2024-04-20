@@ -1,18 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   sstream_destory.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/26 13:09:10 by stan              #+#    #+#             */
-/*   Updated: 2024/04/20 17:13:11 by shatan           ###   ########.fr       */
+/*   Created: 2024/04/19 14:10:00 by stan              #+#    #+#             */
+/*   Updated: 2024/04/20 16:32:24 by shatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "stringstream.h"
 
-bool	ft_isascii(int c)
+// frees the memory stored in stringstream
+void	sstream_destroy(t_stringstream *ss)
 {
-	return (c >= 0 && c <= 127);
+	if (ss == NULL)
+		return ;
+	if (ss->str != NULL)
+		free(ss->str);
+	free(ss);
 }

@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_isnumeric.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/26 13:09:10 by stan              #+#    #+#             */
-/*   Updated: 2024/04/20 17:13:11 by shatan           ###   ########.fr       */
+/*   Created: 2024/04/20 17:08:10 by shatan            #+#    #+#             */
+/*   Updated: 2024/04/20 17:08:12 by shatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-bool	ft_isascii(int c)
+bool	ft_isnumeric(const char *str)
 {
-	return (c >= 0 && c <= 127);
+	return (ft_isdigit(*str) || *str == '-' || *str == '+' || (*str == '.'
+			&& ft_isdigit(str[1])));
 }

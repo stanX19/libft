@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   sstream_get_next_int.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/26 13:09:10 by stan              #+#    #+#             */
-/*   Updated: 2024/04/20 17:13:11 by shatan           ###   ########.fr       */
+/*   Created: 2024/04/19 14:10:13 by stan              #+#    #+#             */
+/*   Updated: 2024/04/20 16:31:44 by shatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "stringstream.h"
 
-bool	ft_isascii(int c)
+// int version of read_long
+// errno will be set to ERANGE upon int overflow
+t_stringstream	*sstream_read_int(t_stringstream *ss, int *val)
 {
-	return (c >= 0 && c <= 127);
+	t_stringstream	*ret;
+	long int		val_long;
+
+	ret = sstream_read_long(ss, &val_long);
+	*val = val_long;
+	if (errno == 0 && !(val_long >= INT_MIN && val_long <= INT_MAX))
+		errno = ERANGE;
+	return (ret);
 }

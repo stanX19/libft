@@ -1,18 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   sstream_new.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/26 13:09:10 by stan              #+#    #+#             */
-/*   Updated: 2024/04/20 17:13:11 by shatan           ###   ########.fr       */
+/*   Created: 2024/04/18 15:46:32 by shatan            #+#    #+#             */
+/*   Updated: 2024/04/20 16:30:33 by shatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "stringstream.h"
 
-bool	ft_isascii(int c)
+// creates stringstring from str, the stored version is a copy from strdup
+t_stringstream	*sstream_new(const char *str)
 {
-	return (c >= 0 && c <= 127);
+	t_stringstream	*ss;
+
+	ss = (t_stringstream *)malloc(sizeof(t_stringstream));
+	if (ss == NULL)
+		return (NULL);
+	ss->str = ft_strdup(str);
+	if (!ss->str)
+	{
+		free(ss);
+		return (NULL);
+	}
+	ss->pos = ss->str;
+	return (ss);
 }

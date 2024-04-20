@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sstream_new.c                                   :+:      :+:    :+:   */
+/*   sstream_skip_non_numeric.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stan <shatan@student.42kl.edu.my>          +#+  +:+       +#+        */
+/*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/18 15:46:32 by shatan            #+#    #+#             */
-/*   Updated: 2024/04/19 13:07:03 by stan             ###   ########.fr       */
+/*   Created: 2024/04/20 14:54:31 by shatan            #+#    #+#             */
+/*   Updated: 2024/04/20 17:18:17 by shatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stringstream.h"
+#include "libft.h"
 
-t_stringstream	*sstream_new(const char *str)
+// skips until occurance of numeric characters "0123456789+-."
+t_stringstream	*sstream_to_numeric(t_stringstream *ss)
 {
-	t_stringstream *ss;
-
-	ss = (t_stringstream *)malloc(sizeof(t_stringstream));
-	if (ss == NULL)
+	if (ss == NULL || ss->pos == NULL)
 		return (NULL);
-	ss->str = ft_strdup(str);
-	ss->pos = ss->str;
+	while (*ss->pos != '\0' && !ft_isnumeric(ss->pos))
+	{
+		++ss->pos;
+	}
 	return (ss);
 }

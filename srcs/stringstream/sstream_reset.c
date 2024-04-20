@@ -1,18 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   sstream_reset.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/26 13:09:10 by stan              #+#    #+#             */
-/*   Updated: 2024/04/20 17:13:11 by shatan           ###   ########.fr       */
+/*   Created: 2024/04/20 17:08:41 by shatan            #+#    #+#             */
+/*   Updated: 2024/04/20 17:08:44 by shatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "stringstream.h"
 
-bool	ft_isascii(int c)
+// resets status and position of stringstream
+t_stringstream	*sstream_reset(t_stringstream *ss)
 {
-	return (c >= 0 && c <= 127);
+	if (ss == NULL || ss->str == NULL)
+	{
+		return (NULL);
+	}
+	ss->pos = ss->str;
+	return (ss);
 }

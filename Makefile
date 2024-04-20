@@ -24,12 +24,11 @@ FLUSH		= \033[2K
 NAME		= libft.a
 ARGV		= 
 
-run: all
-	$(CC) $(CFLAGS) $(IFLAGS) main.c $(NAME)
-	./a.out $(ARGV)
+# run: all
+# 	$(CC) $(CFLAGS) $(IFLAGS) main.c $(NAME)
+# 	./a.out $(ARGV)
 
-$(NAME): $(OBJDIRS) $(OBJS) #$(LIBFT)
-#	cp $(LIBFT) $(NAME)
+$(NAME): $(OBJDIRS) $(OBJS)
 	ar -rcs $(NAME) $(OBJS)
 
 all: $(NAME)

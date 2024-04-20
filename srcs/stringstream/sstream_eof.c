@@ -1,25 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sstream_set_str.c                               :+:      :+:    :+:   */
+/*   sstream_eof.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stan <shatan@student.42kl.edu.my>          +#+  +:+       +#+        */
+/*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/18 15:46:28 by shatan            #+#    #+#             */
-/*   Updated: 2024/04/19 13:07:00 by stan             ###   ########.fr       */
+/*   Created: 2024/04/20 16:06:36 by shatan            #+#    #+#             */
+/*   Updated: 2024/04/20 16:36:03 by shatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "stringstream.h"
 
-t_stringstream	*sstream_set_str(t_stringstream *ss, const char *str)
+// checks if stringstream had reached its end
+bool	sstream_eof(t_stringstream *ss)
 {
-	if (ss == NULL)
-	{
-		return (NULL);
-	}
-	free(ss->str);
-	ss->str = ft_strdup(str);
-	ss->pos = ss->str;
-	return (ss);
+	return (ss == NULL || ss->pos == NULL || *ss->pos == '\0');
 }

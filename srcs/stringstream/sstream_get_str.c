@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sstream_get_next_int.c                          :+:      :+:    :+:   */
+/*   sstream_get_str.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stan <shatan@student.42kl.edu.my>          +#+  +:+       +#+        */
+/*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/19 14:10:13 by stan              #+#    #+#             */
-/*   Updated: 2024/04/19 14:10:22 by stan             ###   ########.fr       */
+/*   Created: 2024/04/18 15:46:54 by shatan            #+#    #+#             */
+/*   Updated: 2024/04/20 16:30:57 by shatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "stringstream.h"
 
-t_stringstream	*sstream_get_next_int(t_stringstream *ss, int *val)
+// returns a copy of the string stored in stringstream
+char	*sstream_get_str(t_stringstream *ss)
 {
-	t_stringstream	*ret;
-	long int		val_long;
-
-	ret = sstream_get_next_long(ss, &val_long);
-	*val = val_long;
-	if (errno == 0 && val_long >= INT_MIN && val_long <= INT_MAX)
-		errno = ERANGE;
-	return (ret);
+	if (ss == NULL || ss->str == NULL)
+	{
+		return (NULL);
+	}
+	return (ft_strdup(ss->str));
 }

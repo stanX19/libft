@@ -6,7 +6,7 @@
 /*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 21:10:38 by stan              #+#    #+#             */
-/*   Updated: 2024/04/18 18:39:58 by shatan           ###   ########.fr       */
+/*   Updated: 2024/04/20 17:09:00 by shatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,15 @@ static long	ret_is_invalid(long ret, long digit, int sign)
 static bool	get_digit(t_base base, char **str, long *val)
 {
 	char	*pos;
-	char	c;
 
-	c = **str;
-	pos = ft_strchr(base.str, c);
-	*val = (pos - base.str) * (pos != NULL);
-	*str += (pos != NULL);
-	return (pos != NULL && c);
+	pos = ft_strchr(base.str, **str);
+	if (pos != NULL && **str != '\0')
+	{
+		*val = (pos - base.str);
+		(*str)++;
+		return (true);
+	}
+	return (false);
 }
 
 static long	get_val(char **str, int sign, t_base base)
