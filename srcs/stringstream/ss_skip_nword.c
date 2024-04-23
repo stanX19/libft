@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sstream_reset.c                                    :+:      :+:    :+:   */
+/*   ss_skip_nword.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/20 17:08:41 by shatan            #+#    #+#             */
-/*   Updated: 2024/04/20 17:08:44 by shatan           ###   ########.fr       */
+/*   Created: 2024/04/20 14:54:31 by shatan            #+#    #+#             */
+/*   Updated: 2024/04/23 13:52:53 by shatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stringstream.h"
+#include "libft.h"
 
-// resets status and position of stringstream
-t_stringstream	*sstream_reset(t_stringstream *ss)
+// skips `n` number of words seperated by characters specified in `seps` charset
+t_stringstream	*ss_skip_nword(t_stringstream *ss, size_t n,
+		const char *seps)
 {
-	if (ss == NULL || ss->str == NULL)
-	{
+	size_t	i;
+
+	if (ss == NULL || ss->pos == NULL)
 		return (NULL);
+	i = 0;
+	while (i < n && ss_read_line(ss, NULL, seps))
+	{
+		i++;
 	}
-	ss->pos = ss->str;
 	return (ss);
 }

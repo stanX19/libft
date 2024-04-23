@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sstream_skip_nword.c                               :+:      :+:    :+:   */
+/*   ss_skip_nchar.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/20 14:54:31 by shatan            #+#    #+#             */
-/*   Updated: 2024/04/20 16:39:06 by shatan           ###   ########.fr       */
+/*   Created: 2024/04/20 14:54:35 by shatan            #+#    #+#             */
+/*   Updated: 2024/04/23 13:52:47 by shatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// skips `n` number of words seperated by characters specified in `seps` charset
-t_stringstream	*sstream_skip_nword(t_stringstream *ss, size_t n,
-		const char *seps)
+// skips n number of characters from current position
+t_stringstream	*ss_skip_nchar(t_stringstream *ss, size_t n)
 {
 	size_t	i;
 
 	if (ss == NULL || ss->pos == NULL)
 		return (NULL);
 	i = 0;
-	while (i < n && sstream_getline(ss, NULL, seps))
+	while (i < n && *ss->pos)
 	{
-		i++;
+		++ss->pos;
+		++i;
 	}
 	return (ss);
 }

@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sstream_destory.c                                  :+:      :+:    :+:   */
+/*   ss_skip_non_numeric.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/19 14:10:00 by stan              #+#    #+#             */
-/*   Updated: 2024/04/20 16:32:24 by shatan           ###   ########.fr       */
+/*   Created: 2024/04/20 14:54:31 by shatan            #+#    #+#             */
+/*   Updated: 2024/04/23 13:52:49 by shatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stringstream.h"
+#include "libft.h"
 
-// frees the memory stored in stringstream
-void	sstream_destroy(t_stringstream *ss)
+// skips until occurance of numeric characters "0123456789+-."
+t_stringstream	*ss_skip_to_numeric(t_stringstream *ss)
 {
-	if (ss == NULL)
-		return ;
-	if (ss->str != NULL)
-		free(ss->str);
-	free(ss);
+	if (ss == NULL || ss->pos == NULL)
+		return (NULL);
+	while (*ss->pos != '\0' && !ft_isnumeric(ss->pos))
+	{
+		++ss->pos;
+	}
+	return (ss);
 }

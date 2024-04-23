@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sstream_skip_until.c                               :+:      :+:    :+:   */
+/*   ss_read_char.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/20 14:54:31 by shatan            #+#    #+#             */
-/*   Updated: 2024/04/20 16:39:09 by shatan           ###   ########.fr       */
+/*   Created: 2024/04/19 14:10:13 by stan              #+#    #+#             */
+/*   Updated: 2024/04/23 13:52:20 by shatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "stringstream.h"
 
-// skips until occurance of characters specified in charset
-t_stringstream	*sstream_skip_until(t_stringstream *ss, const char *charset)
+t_stringstream	*ss_read_char(t_stringstream *ss, char *cptr)
 {
-	if (ss == NULL || ss->pos == NULL)
+	if (!ss || !cptr)
 		return (NULL);
-	while (ft_strchr(charset, *ss->pos) == NULL)
-	{
+	*cptr = *ss->pos;
+	if (*ss->pos != '\0')
 		++ss->pos;
-	}
 	return (ss);
 }

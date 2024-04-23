@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sstream_set_str.c                                  :+:      :+:    :+:   */
+/*   ss_new.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/18 15:46:28 by shatan            #+#    #+#             */
-/*   Updated: 2024/04/20 16:29:15 by shatan           ###   ########.fr       */
+/*   Created: 2024/04/18 15:46:32 by shatan            #+#    #+#             */
+/*   Updated: 2024/04/23 13:52:19 by shatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "stringstream.h"
 
-// reassigns str for stringstream
-t_stringstream	*sstream_set_str(t_stringstream *ss, const char *str)
+// creates stringstring from str, the stored version is a copy from strdup
+t_stringstream	*ss_new(const char *str)
 {
+	t_stringstream	*ss;
+
+	ss = (t_stringstream *)malloc(sizeof(t_stringstream));
 	if (ss == NULL)
-	{
 		return (NULL);
-	}
-	if (ss->str != str)
+	ss->str = ft_strdup(str);
+	if (!ss->str)
 	{
-		if (ss->str != NULL)
-			free(ss->str);
-		ss->str = ft_strdup(str);
+		free(ss);
+		return (NULL);
 	}
 	ss->pos = ss->str;
 	return (ss);

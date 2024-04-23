@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sstream_add_str.c                                  :+:      :+:    :+:   */
+/*   ss_read_int.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/20 12:36:41 by shatan            #+#    #+#             */
-/*   Updated: 2024/04/20 17:08:55 by shatan           ###   ########.fr       */
+/*   Created: 2024/04/19 14:10:13 by stan              #+#    #+#             */
+/*   Updated: 2024/04/23 13:52:25 by shatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "stringstream.h"
 
-// appends str to the stringstream for furthur processing
-t_stringstream	*sstream_append_str(t_stringstream *ss, const char *word)
+// int version of read_long
+// errno will be set to ERANGE upon int overflow
+t_stringstream	*ss_read_int(t_stringstream *ss, int *val)
 {
-	char	*original;
+	t_stringstream	*ret;
+	long int		val_long;
 
-	if (ss == NULL || ss->str == NULL)
-		return (NULL);
-	original = ss->str;
-	ss->str = ft_strjoin(original, word);
-	free(original);
-	return (ss);
+	ret = ss_read_long(ss, &val_long);
+	*val = val_long;
+	if (errno == 0 && !(val_long >= INT_MIN && val_long <= INT_MAX))
+		errno = ERANGE;
+	return (ret);
 }

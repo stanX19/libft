@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sstream_skip_non_numeric.c                         :+:      :+:    :+:   */
+/*   ss_skip_until.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 14:54:31 by shatan            #+#    #+#             */
-/*   Updated: 2024/04/20 17:18:17 by shatan           ###   ########.fr       */
+/*   Updated: 2024/04/23 13:52:55 by shatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// skips until occurance of numeric characters "0123456789+-."
-t_stringstream	*sstream_to_numeric(t_stringstream *ss)
+// skips until occurance of characters specified in charset
+t_stringstream	*ss_skip_to_charset(t_stringstream *ss, const char *charset)
 {
 	if (ss == NULL || ss->pos == NULL)
 		return (NULL);
-	while (*ss->pos != '\0' && !ft_isnumeric(ss->pos))
+	while (ft_strchr(charset, *ss->pos) == NULL)
 	{
 		++ss->pos;
 	}

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sstream_get_next_line.c                            :+:      :+:    :+:   */
+/*   ss_read_line.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 15:50:48 by shatan            #+#    #+#             */
-/*   Updated: 2024/04/20 15:29:12 by shatan           ###   ########.fr       */
+/*   Updated: 2024/04/23 13:52:27 by shatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 // ss: stringstream object
 // line: pointer to str pointer
 // seps: seperating charset
-t_stringstream	*sstream_getline(t_stringstream *ss, char **line,
+t_stringstream	*ss_read_line(t_stringstream *ss, char **line,
 	const char *seps)
 {
 	char	*start;

@@ -7,7 +7,7 @@ OBJS		= $(subst $(SRCDIR),$(OBJDIR),$(subst .c,.o,$(SRCS)))
 
 INCLUDE_DIR	= 
 HEADER_DIR	= headers
-HEADERS		:= $(shell find $(HEADER_DIR) -name '*.h') $(shell find $(INCLUDE_DIR) -name '*.h')
+HEADERS		:= $(shell find $(HEADER_DIR) -name '*.h') #$(shell find $(INCLUDE_DIR) -name '*.h')
 HEADERS_INC	= $(addprefix -I,$(sort $(dir $(HEADERS))))
 
 LIBS		= $(PRINTFLIB)

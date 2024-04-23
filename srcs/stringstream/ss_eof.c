@@ -1,23 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sstream_get_str.c                                  :+:      :+:    :+:   */
+/*   ss_eof.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/18 15:46:54 by shatan            #+#    #+#             */
-/*   Updated: 2024/04/20 16:30:57 by shatan           ###   ########.fr       */
+/*   Created: 2024/04/20 16:06:36 by shatan            #+#    #+#             */
+/*   Updated: 2024/04/23 13:52:15 by shatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "stringstream.h"
 
-// returns a copy of the string stored in stringstream
-char	*sstream_get_str(t_stringstream *ss)
+// checks if stringstream had reached its end
+bool	ss_eof(t_stringstream *ss)
 {
-	if (ss == NULL || ss->str == NULL)
-	{
-		return (NULL);
-	}
-	return (ft_strdup(ss->str));
+	return (ss == NULL || ss->pos == NULL || *ss->pos == '\0');
 }

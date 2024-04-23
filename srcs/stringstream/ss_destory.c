@@ -1,19 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sstream_eof.c                                      :+:      :+:    :+:   */
+/*   ss_destory.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/20 16:06:36 by shatan            #+#    #+#             */
-/*   Updated: 2024/04/20 16:36:03 by shatan           ###   ########.fr       */
+/*   Created: 2024/04/19 14:10:00 by stan              #+#    #+#             */
+/*   Updated: 2024/04/23 13:52:13 by shatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "stringstream.h"
 
-// checks if stringstream had reached its end
-bool	sstream_eof(t_stringstream *ss)
+// frees the memory stored in stringstream
+void	ss_destroy(t_stringstream *ss)
 {
-	return (ss == NULL || ss->pos == NULL || *ss->pos == '\0');
+	if (ss == NULL)
+		return ;
+	if (ss->str != NULL)
+		free(ss->str);
+	free(ss);
 }
