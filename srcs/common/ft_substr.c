@@ -6,7 +6,7 @@
 /*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 11:23:26 by stan              #+#    #+#             */
-/*   Updated: 2024/04/20 15:16:11 by shatan           ###   ########.fr       */
+/*   Updated: 2024/04/23 14:14:15 by shatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	while (dstsize < len + start && s[dstsize])
 		dstsize++;
 	if (dstsize < start)
-		return ((char *)ft_calloc(sizeof(char)));
+		return ((char *)ft_calloc(sizeof(char), 1));
 	dstsize = dstsize - start + 1;
 	s = s + start;
 	ret = malloc(sizeof(char) * dstsize);

@@ -6,7 +6,7 @@
 /*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 15:46:28 by shatan            #+#    #+#             */
-/*   Updated: 2024/04/23 13:52:38 by shatan           ###   ########.fr       */
+/*   Updated: 2024/04/23 16:18:11 by shatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,6 @@ t_stringstream	*ss_setstr(t_stringstream *ss, const char *str)
 			free(ss->str);
 		ss->str = ft_strdup(str);
 	}
-	ss->pos = ss->str;
+	ss_reset(ss);
 	return (ss);
 }

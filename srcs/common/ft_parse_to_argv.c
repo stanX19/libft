@@ -6,7 +6,7 @@
 /*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 14:53:57 by shatan            #+#    #+#             */
-/*   Updated: 2024/04/18 14:24:15 by shatan           ###   ########.fr       */
+/*   Updated: 2024/04/23 15:07:34 by shatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,6 @@ char	**ft_str_to_args(const char *str, int *argc)
 	char	**ret;
 
 	ret = ft_split(str, ' ');
-	*argc = ft_tokens_len(ret);
+	*argc = ft_tokens_len((const char **)ret);
 	return (ret);
 }

@@ -6,7 +6,7 @@
 /*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 14:54:35 by shatan            #+#    #+#             */
-/*   Updated: 2024/04/23 13:52:47 by shatan           ###   ########.fr       */
+/*   Updated: 2024/04/23 16:18:57 by shatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,17 @@
 t_stringstream	*ss_skip_nchar(t_stringstream *ss, size_t n)
 {
 	size_t	i;
+	char	*newpos;
 
-	if (ss == NULL || ss->pos == NULL)
+	newpos = ss->pos;
+	if (ss == NULL || newpos == NULL)
 		return (NULL);
 	i = 0;
-	while (i < n && *ss->pos)
+	while (i < n && *newpos)
 	{
-		++ss->pos;
+		++newpos;
 		++i;
 	}
+	ss_update_pos(ss, newpos);
 	return (ss);
 }

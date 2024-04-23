@@ -6,7 +6,7 @@
 /*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 14:55:35 by shatan            #+#    #+#             */
-/*   Updated: 2024/04/23 13:52:29 by shatan           ###   ########.fr       */
+/*   Updated: 2024/04/23 16:15:41 by shatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 // no read	: NULL,						val=0,					errno=EINVAL
 t_stringstream	*ss_read_long(t_stringstream *ss, long int *val)
 {
+	char	*newpos;
+
 	if (ss == NULL || ss->pos == NULL)
 	{
 		return (NULL);
@@ -26,8 +28,9 @@ t_stringstream	*ss_read_long(t_stringstream *ss, long int *val)
 		ft_printf("Error: Unresolved error. errno %i\n", errno);
 		return (NULL);
 	}
-	*val = ft_strtol(ss->pos, &ss->pos, "0123456789");
-	if (errno != EINVAL)
+	*val = ft_strtol(ss->pos, &newpos, "0123456789");
+	ss_update_pos(ss, newpos);
+	if (errno == 0)
 		return (ss);
 	else
 		return (NULL);

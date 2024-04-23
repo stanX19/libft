@@ -6,13 +6,13 @@
 /*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 23:02:55 by stan              #+#    #+#             */
-/*   Updated: 2024/04/18 14:24:09 by shatan           ###   ########.fr       */
+/*   Updated: 2024/04/23 14:57:53 by shatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_tokens_len(char **tokens)
+size_t ft_tokens_len(const char **tokens)
 {
 	int	i;
 

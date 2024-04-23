@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ss_new.c                                           :+:      :+:    :+:   */
+/*   ft_strequ.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/18 15:46:32 by shatan            #+#    #+#             */
-/*   Updated: 2024/04/23 13:52:19 by shatan           ###   ########.fr       */
+/*   Created: 2024/04/23 14:22:39 by shatan            #+#    #+#             */
+/*   Updated: 2024/04/23 14:29:26 by shatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stringstream.h"
+#include "libft.h"
 
-// creates stringstring from str, the stored version is a copy from strdup
-t_stringstream	*ss_new(const char *str)
+bool	ft_strequ(const char *s1, const char *s2)
 {
-	t_stringstream	*ss;
+	return ft_strcmp(s1, s2) == 0;
+}
 
-	ss = (t_stringstream *)malloc(sizeof(t_stringstream));
-	if (ss == NULL)
-		return (NULL);
-	ss->str = ft_strdup(str);
-	if (!ss->str)
-	{
-		free(ss);
-		return (NULL);
-	}
-	ss->pos = ss->str;
-	return (ss);
+bool	ft_strnequ(const char *s1, const char *s2, size_t n)
+{
+	return ft_strncmp(s1, s2, n) == 0;
 }
