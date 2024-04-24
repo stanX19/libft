@@ -6,7 +6,7 @@
 /*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 15:46:32 by shatan            #+#    #+#             */
-/*   Updated: 2024/04/23 16:29:35 by shatan           ###   ########.fr       */
+/*   Updated: 2024/04/24 13:35:50 by shatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ t_stringstream	*ss_create(const char *str)
 }
 
 
-t_stringstream	*ss_create_with_str(char *str)
+t_stringstream	*ss_create_use_provided(char *str)
 {
 	t_stringstream	*ss;
 

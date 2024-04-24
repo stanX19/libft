@@ -6,14 +6,15 @@
 /*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 14:10:13 by stan              #+#    #+#             */
-/*   Updated: 2024/04/23 15:32:23 by shatan           ###   ########.fr       */
+/*   Updated: 2024/04/24 13:54:27 by shatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "stringstream.h"
 
-// int version of read_long
+// set val to the next integer occurance
 // errno will be set to ERANGE upon int overflow
+// returns NULL upon failure
 t_stringstream	*ss_read_int(t_stringstream *ss, int *val)
 {
 	t_stringstream	*ret;
@@ -24,6 +25,7 @@ t_stringstream	*ss_read_int(t_stringstream *ss, int *val)
 	if (errno == 0 && !(val_long >= INT_MIN && val_long <= INT_MAX))
 	{
 		errno = ERANGE;
+		return (NULL);
 	}
 	return (ret);
 }
