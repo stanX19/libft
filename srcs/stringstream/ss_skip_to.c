@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ss_read_int.c                                      :+:      :+:    :+:   */
+/*   ss_skip_to.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stan <shatan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/19 14:10:13 by stan              #+#    #+#             */
-/*   Updated: 2024/04/27 13:04:01 by stan             ###   ########.fr       */
+/*   Created: 2024/04/20 14:54:31 by shatan            #+#    #+#             */
+/*   Updated: 2024/04/27 13:05:51 by stan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "stringstream.h"
 
-// set val to the next integer occurance
-// errno will be set to ERANGE upon int overflow
-// returns NULL upon failure
-t_stringstream	*ss_read_int(t_stringstream *ss, int *val)
+// skips until occurance of characters specified in charset
+t_stringstream	*ss_skip_to_charset(t_stringstream *ss, const char *charset)
 {
-	t_stringstream	*ret;
-	long int		val_long;
+	char	*newpos;
 
-	ret = ss_read_long(ss, &val_long);
-	*val = val_long;
-	if (errno == 0 && !(val_long >= INT_MIN && val_long <= INT_MAX))
+	newpos = ss->pos;
+	if (ss == NULL || newpos == NULL)
+		return (NULL);
+	while (ft_strchr(charset, *newpos) == NULL)
 	{
-		errno = ERANGE;
+		++newpos;
 	}
-	return (ret);
+	ss_update_pos(ss, newpos);
+	return (ss);
 }

@@ -3,17 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ss_read_long.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
+/*   By: stan <shatan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 14:55:35 by shatan            #+#    #+#             */
-/*   Updated: 2024/04/24 13:54:43 by shatan           ###   ########.fr       */
+/*   Updated: 2024/04/27 13:04:15 by stan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "stringstream.h"
 
 // success	: t_stringstream pointer,	val=long,				errno=0
-// overflow	: t_stringstream pointer,	val=LONG_MAX/LONG_MIN,	errno=ERANGE
+// eof		: NULL,						val=0,					errno=0
+// overflow	: NULL,						val=LONG_MAX/LONG_MIN,	errno=ERANGE
 // no read	: NULL,						val=0,					errno=EINVAL
 t_stringstream	*ss_read_long(t_stringstream *ss, long int *val)
 {
@@ -29,9 +30,13 @@ t_stringstream	*ss_read_long(t_stringstream *ss, long int *val)
 		return (NULL);
 	}
 	*val = ft_strtol(ss->pos, &newpos, "0123456789");
+	if (errno == EINVAL && ss_eof(ss_skip_if(ss, ft_isspace)))
+	{
+		errno = 0;
+		return NULL;
+	}
 	ss_update_pos(ss, newpos);
 	if (errno == 0)
 		return (ss);
-	else
-		return (NULL);
+	return (NULL);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stringstream.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
+/*   By: stan <shatan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 12:32:50 by shatan            #+#    #+#             */
-/*   Updated: 2024/04/24 13:35:50 by shatan           ###   ########.fr       */
+/*   Updated: 2024/04/27 13:05:58 by stan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ t_stringstream	*ss_skip_nword(t_stringstream *ss, size_t n,
 					const char *seps);
 t_stringstream	*ss_skip_to_charset(t_stringstream *ss, const char *charset);
 t_stringstream	*ss_skip_to_numeric(t_stringstream *ss);
+t_stringstream	*ss_skip_if(t_stringstream *ss, bool (*f)(int));
+t_stringstream	*ss_skip_if_not(t_stringstream *ss, bool (*f)(int));
 t_stringstream	*ss_append_to_str(t_stringstream *ss, const char *word);
 t_stringstream	*ss_update_pos(t_stringstream *ss, char *newpos);
 t_stringstream	*ss_reset(t_stringstream *ss);
