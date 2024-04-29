@@ -6,7 +6,7 @@
 /*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 14:55:35 by shatan            #+#    #+#             */
-/*   Updated: 2024/04/29 13:29:16 by shatan           ###   ########.fr       */
+/*   Updated: 2024/04/29 19:09:55 by shatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,5 @@ t_stringstream	*ss_read_long(t_stringstream *ss, long int *val)
 	if (ss_read_precheck(ss))
 		return (NULL);
 	*val = ft_strtol(ss->pos, &newpos, "0123456789");
-	return (ss_read_return(ss, newpos));
+	return (ss_read_get_return(ss, newpos));
 }
