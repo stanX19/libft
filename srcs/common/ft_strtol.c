@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtol.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
+/*   By: stan <shatan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 21:10:38 by stan              #+#    #+#             */
-/*   Updated: 2024/04/29 13:40:25 by shatan           ###   ########.fr       */
+/*   Updated: 2024/04/29 23:01:51 by stan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static bool	get_digit(t_base base, char **str, long *val)
 	char	*pos;
 
 	pos = ft_strchr(base.str, **str);
-	if (pos != NULL && **str != '\0')
+	if (**str != '\0' && pos != NULL)
 	{
 		*val = (pos - base.str);
 		(*str)++;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ss_read_double.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
+/*   By: stan <shatan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 14:36:21 by shatan            #+#    #+#             */
-/*   Updated: 2024/04/29 19:09:55 by shatan           ###   ########.fr       */
+/*   Updated: 2024/04/29 23:20:15 by stan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ t_stringstream	*ss_read_long_double(t_stringstream *ss, long double *val)
 {
 	char	*newpos;
 
+	*val = 0;
 	if (ss_read_precheck(ss))
 		return (NULL);
 	*val = ft_strtold(ss->pos, &newpos);

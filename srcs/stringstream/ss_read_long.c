@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ss_read_long.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
+/*   By: stan <shatan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 14:55:35 by shatan            #+#    #+#             */
-/*   Updated: 2024/04/29 19:09:55 by shatan           ###   ########.fr       */
+/*   Updated: 2024/04/29 23:23:19 by stan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ t_stringstream	*ss_read_long(t_stringstream *ss, long int *val)
 {
 	char	*newpos;
 
+	*val = 0;
 	if (ss_read_precheck(ss))
 		return (NULL);
 	*val = ft_strtol(ss->pos, &newpos, "0123456789");
