@@ -1,17 +1,23 @@
 #include "stringstream_private.h"
 
+static bool	ss_eof_after_space(t_stringstream *ss)
+{
+	char	*pos;
+
+	pos = ss->pos;
+	while (ft_isspace(*pos))
+	{
+		++pos;
+	}
+	return (*pos == '\0');
+}
+
 // success	: t_stringstream pointer,	errno=0
 // eof		: NULL,						errno=0
 // fail		: NULL,						errno=EINVAL
-t_stringstream *ss_read_get_return(t_stringstream *ss, char *newpos)
+t_stringstream	*ss_read_get_return(t_stringstream *ss, char *newpos)
 {
-	t_stringstream	*cpy;
-	bool			eof;
-
-	cpy = ss_copy(ss);
-	eof = ss_eof(ss_skip_if(cpy, ft_isspace));
-	ss_destroy(cpy);
-	if (errno == EINVAL && eof)
+	if (errno == EINVAL && ss_eof_after_space(ss))
 	{
 		errno = 0;
 		return (NULL);
