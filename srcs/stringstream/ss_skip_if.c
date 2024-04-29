@@ -1,4 +1,4 @@
-#include "stringstream.h"
+#include "stringstream_private.h"
 
 // skips characters marked as cond by f
 static t_stringstream	*ss_skip(t_stringstream *ss, bool (*f)(int), bool cond)

@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ss_reset.c                                         :+:      :+:    :+:   */
+/*   stringstream_private.h                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/20 17:08:41 by shatan            #+#    #+#             */
-/*   Updated: 2024/04/29 13:03:09 by shatan           ###   ########.fr       */
+/*   Created: 2024/04/29 13:00:14 by shatan            #+#    #+#             */
+/*   Updated: 2024/04/29 13:37:21 by shatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stringstream_private.h"
+#ifndef STRINGSTREAM_PRIVATE_H
+# define STRINGSTREAM_PRIVATE_H
+# include "common.h"
+# include "ft_printf.h"
+# include "stringstream.h"
 
-// resets status and position of stringstream
-t_stringstream	*ss_reset(t_stringstream *ss)
-{
-	if (ss == NULL || ss->str == NULL)
-	{
-		return (NULL);
-	}
-	ss->pos = ss->str;
-	ss->prev_pos = NULL;
-	return (ss);
-}
+t_stringstream	*ss_update_pos(t_stringstream *ss, char *newpos);
+int				ss_read_precheck(t_stringstream *ss);
+t_stringstream	*ss_read_return(t_stringstream *ss, char *newpos);
+
+#endif  //STRINGSTREAM_PRIVATE

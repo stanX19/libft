@@ -6,11 +6,11 @@
 /*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 15:54:05 by shatan            #+#    #+#             */
-/*   Updated: 2024/04/23 16:08:24 by shatan           ###   ########.fr       */
+/*   Updated: 2024/04/29 13:03:09 by shatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stringstream.h"
+#include "stringstream_private.h"
 
 char	*ss_get_prev_str(t_stringstream *ss)
 {

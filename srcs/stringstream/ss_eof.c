@@ -6,11 +6,11 @@
 /*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 16:06:36 by shatan            #+#    #+#             */
-/*   Updated: 2024/04/23 13:52:15 by shatan           ###   ########.fr       */
+/*   Updated: 2024/04/29 13:03:09 by shatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stringstream.h"
+#include "stringstream_private.h"
 
 // checks if stringstream had reached its end
 bool	ss_eof(t_stringstream *ss)

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ss_read_int.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stan <shatan@student.42kl.edu.my>          +#+  +:+       +#+        */
+/*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 14:10:13 by stan              #+#    #+#             */
-/*   Updated: 2024/04/27 13:04:01 by stan             ###   ########.fr       */
+/*   Updated: 2024/04/29 13:03:09 by shatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stringstream.h"
+#include "stringstream_private.h"
 
 // set val to the next integer occurance
 // errno will be set to ERANGE upon int overflow

@@ -6,11 +6,11 @@
 /*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 14:54:31 by shatan            #+#    #+#             */
-/*   Updated: 2024/04/23 16:21:46 by shatan           ###   ########.fr       */
+/*   Updated: 2024/04/29 13:04:21 by shatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "stringstream_private.h"
 
 // skips until occurance of characters specified in charset
 t_stringstream	*ss_skip_to_charset(t_stringstream *ss, const char *charset)

@@ -6,11 +6,11 @@
 /*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 15:50:48 by shatan            #+#    #+#             */
-/*   Updated: 2024/04/23 14:47:46 by shatan           ###   ########.fr       */
+/*   Updated: 2024/04/29 13:03:09 by shatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stringstream.h"
+#include "stringstream_private.h"
 
 // ss: stringstream object
 // line: pointer to str pointer

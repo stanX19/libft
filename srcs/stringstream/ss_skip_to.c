@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ss_skip_to.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stan <shatan@student.42kl.edu.my>          +#+  +:+       +#+        */
+/*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 14:54:31 by shatan            #+#    #+#             */
-/*   Updated: 2024/04/27 13:05:51 by stan             ###   ########.fr       */
+/*   Updated: 2024/04/29 13:03:09 by shatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stringstream.h"
+#include "stringstream_private.h"
 
 // skips until occurance of characters specified in charset
 t_stringstream	*ss_skip_to_charset(t_stringstream *ss, const char *charset)

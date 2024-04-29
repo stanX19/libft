@@ -6,11 +6,11 @@
 /*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 15:46:32 by shatan            #+#    #+#             */
-/*   Updated: 2024/04/24 13:35:50 by shatan           ###   ########.fr       */
+/*   Updated: 2024/04/29 13:03:09 by shatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stringstream.h"
+#include "stringstream_private.h"
 
 // creates stringstring from str, the stored version is a copy from strdup
 t_stringstream	*ss_create(const char *str)
