@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtol.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stan <shatan@student.42kl.edu.my>          +#+  +:+       +#+        */
+/*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 21:10:38 by stan              #+#    #+#             */
-/*   Updated: 2024/04/29 23:01:51 by stan             ###   ########.fr       */
+/*   Updated: 2024/04/30 14:10:05 by shatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,12 +73,10 @@ long	ft_strtol(const char *nptr, char **endptr, const char *_base)
 	str = (char *)nptr;
 	while (ft_isspace(*str))
 		++str;
-	while (*str == '-' || *str == '+')
-	{
-		if (*str == '-')
-			sign *= -1;
+	if (*str == '-')
+		sign *= -1;
+	if (*str == '-' || *str == '+')
 		++str;
-	}
 	base = ft_init_base(_base);
 	ret = get_val(&str, sign, base);
 	if (endptr != NULL && errno == EINVAL)

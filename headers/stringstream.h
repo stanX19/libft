@@ -6,7 +6,7 @@
 /*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 12:32:50 by shatan            #+#    #+#             */
-/*   Updated: 2024/04/29 19:07:43 by shatan           ###   ########.fr       */
+/*   Updated: 2024/04/30 14:31:07 by shatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define STRINGSTREAM_H
 # include "common.h"
 # include "ft_printf.h"
+# include "constants.h"
 
 typedef struct s_stringstream
 {
@@ -28,6 +29,7 @@ t_stringstream	*ss_copy(t_stringstream	*ss);
 t_stringstream	*ss_setstr(t_stringstream *ss, const char *str);
 char			*ss_getstr(t_stringstream *ss);
 char			*ss_get_prev_str(t_stringstream *ss);
+char			ss_peek(t_stringstream *ss);
 t_stringstream	*ss_read_line(t_stringstream *ss, char **line,
 					const char *seps);
 t_stringstream	*ss_read_char(t_stringstream *ss, char *cptr);

@@ -6,7 +6,7 @@
 /*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 14:46:36 by shatan            #+#    #+#             */
-/*   Updated: 2024/04/23 14:58:02 by shatan           ###   ########.fr       */
+/*   Updated: 2024/04/30 14:35:27 by shatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ bool			ft_isalnum(int c);
 bool			ft_isascii(int c);
 bool			ft_isprint(int c);
 bool			ft_isspace(int c);
+bool			ft_isspace_or_null(int c);
 bool			ft_isnumeric(const char *str);
 void			*ft_memset(void *str, int c, size_t n);
 size_t			ft_strlen(const char *s);

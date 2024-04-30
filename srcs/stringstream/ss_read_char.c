@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ss_read_char.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stan <shatan@student.42kl.edu.my>          +#+  +:+       +#+        */
+/*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 14:10:13 by stan              #+#    #+#             */
-/*   Updated: 2024/04/29 23:23:39 by stan             ###   ########.fr       */
+/*   Updated: 2024/04/30 14:06:37 by shatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ t_stringstream	*ss_read_char(t_stringstream *ss, char *cptr)
 	*cptr = '\0';
 	if (ss_read_precheck(ss))
 		return (NULL);
+	newpos = ss->pos;
 	while (ft_isspace(*newpos))
 	{
 		newpos++;
