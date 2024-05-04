@@ -6,7 +6,7 @@
 /*   By: stan <shatan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 14:46:36 by shatan            #+#    #+#             */
-/*   Updated: 2024/05/02 22:04:26 by stan             ###   ########.fr       */
+/*   Updated: 2024/05/04 12:23:15 by stan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,8 @@ char			*ft_strrev(char *s);
 char			*ft_strnrev(char *s, size_t n);
 void			ft_tokens_free(char **tokens);
 size_t			ft_tokens_len(const char **tokens);
-char			*ft_tokens_join(const char **tokens, size_t len, const char *sep);
+char			*ft_tokens_join(const char **tokens, size_t len,
+					const char *sep);
 char			**ft_str_to_args(const char *str, int *argc);
 t_base			ft_init_base(const char *base);
 long			ft_strtol(const char *_str, char **endptr, const char *_base);

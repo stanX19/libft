@@ -1,5 +1,16 @@
-#include "libft.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_tokens_join.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: stan <shatan@student.42kl.edu.my>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/04 12:24:47 by stan              #+#    #+#             */
+/*   Updated: 2024/05/04 12:24:50 by stan             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include "libft.h"
 
 static void	assign_strjoin(char **ret, const char *s2)
 {
@@ -9,7 +20,6 @@ static void	assign_strjoin(char **ret, const char *s2)
 	*ret = ft_strjoin(original, s2);
 	free(original);
 }
-
 
 char	*ft_tokens_join(const char **tokens, size_t len, const char *sep)
 {

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ss_create.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
+/*   By: stan <shatan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 15:46:32 by shatan            #+#    #+#             */
-/*   Updated: 2024/04/29 13:03:09 by shatan           ###   ########.fr       */
+/*   Updated: 2024/05/04 12:25:58 by stan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ t_stringstream	*ss_create(const char *str)
 	ss->prev_pos = NULL;
 	return (ss);
 }
-
 
 t_stringstream	*ss_create_use_provided(char *str)
 {
