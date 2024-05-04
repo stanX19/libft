@@ -6,7 +6,7 @@
 /*   By: stan <shatan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 14:46:36 by shatan            #+#    #+#             */
-/*   Updated: 2024/05/04 12:23:15 by stan             ###   ########.fr       */
+/*   Updated: 2024/05/04 12:45:04 by stan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ char			*ft_strjoin(char const *s1, char const *s2);
 char			*ft_itoa(int n);
 long			ft_abs(long a);
 long			ft_max(long a, long b);
+long			ft_min(long a, long b);
 long			ft_sign(long nb);
 long			ft_magnitude_shift(long nb, long magnitude);
 char			*ft_strtrim(char const *s1, char const *set);
