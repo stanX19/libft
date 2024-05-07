@@ -6,7 +6,7 @@
 /*   By: stan <shatan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 22:26:39 by stan              #+#    #+#             */
-/*   Updated: 2024/05/04 12:27:14 by stan             ###   ########.fr       */
+/*   Updated: 2024/05/07 10:58:16 by stan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ss_read_precheck(t_stringstream *ss)
 	if (errno != 0)
 	{
 		ft_printf("Error: Unresolved error. errno %i\n", errno);
-		ft_printf("Why? because ss read fucking depends on errno\n");
+		ft_printf("Why? because ss read fucking relies on errno\n");
 		return (1);
 	}
 	return (0);
