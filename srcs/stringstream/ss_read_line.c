@@ -6,20 +6,20 @@
 /*   By: stan <shatan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 15:50:48 by shatan            #+#    #+#             */
-/*   Updated: 2024/05/07 11:21:28 by stan             ###   ########.fr       */
+/*   Updated: 2024/05/10 14:01:23 by stan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "stringstream_private.h"
 
-static char	*find_start_of_line(char *newpos, char *seps)
+static char	*find_start_of_line(char *newpos, const char *seps)
 {
 	while (*newpos != '\0' && ft_strchr(seps, *newpos))
 		newpos++;
 	return (newpos);
 }
 
-static char	*find_end_of_line(char *newpos, char *seps)
+static char	*find_end_of_line(char *newpos, const char *seps)
 {
 	while (*newpos != '\0' && !ft_strchr(seps, *newpos))
 		newpos++;
