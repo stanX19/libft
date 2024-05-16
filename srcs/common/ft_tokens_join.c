@@ -6,7 +6,7 @@
 /*   By: stan <shatan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 12:24:47 by stan              #+#    #+#             */
-/*   Updated: 2024/05/04 12:24:50 by stan             ###   ########.fr       */
+/*   Updated: 2024/05/16 12:29:06 by stan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ char	*ft_tokens_join(const char **tokens, size_t len, const char *sep)
 
 	i = 0;
 	ret = ft_calloc(sizeof(char), 1);
+	if (len <= 0)
+		return (ret);
 	assign_strjoin(&ret, tokens[i++]);
 	while (i < len)
 	{
