@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   common.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stan <shatan@student.42kl.edu.my>          +#+  +:+       +#+        */
+/*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 14:46:36 by shatan            #+#    #+#             */
-/*   Updated: 2024/05/04 12:45:04 by stan             ###   ########.fr       */
+/*   Updated: 2024/05/17 16:03:43 by shatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ long			ft_abs(long a);
 long			ft_max(long a, long b);
 long			ft_min(long a, long b);
 long			ft_sign(long nb);
+long			ft_pow(long nu, long exp);
 long			ft_magnitude_shift(long nb, long magnitude);
 char			*ft_strtrim(char const *s1, char const *set);
 char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
