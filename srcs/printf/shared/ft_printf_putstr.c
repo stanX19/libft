@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_putstr.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stan <shatan@student.42kl.edu.my>          +#+  +:+       +#+        */
+/*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 18:39:26 by stan              #+#    #+#             */
-/*   Updated: 2024/03/09 16:59:27 by stan             ###   ########.fr       */
+/*   Updated: 2024/05/18 13:17:31 by shatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,12 @@
 
 void	ft_printf_putstr(const char *str, size_t *len)
 {
-	size_t	idx;
-
-	idx = ft_strlen(str);
-	*len += idx;
-	write(1, str, idx);
+	(*len) += write(1, str, ft_strlen(str));
 }
 
 void	ft_printf_putnstr(const char *str, int n, size_t *len)
 {
 	if (n <= 0)
 		return ;
-	*len += n;
-	write(1, str, n);
+	(*len) += write(1, str, n);
 }
