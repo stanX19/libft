@@ -72,9 +72,11 @@ void		ft_printf_putchar(char c, size_t *len);
 void		ft_printf_putnchar(char c, int n, size_t *len);
 void		ft_printf_putstr(const char *str, size_t *len);
 void		ft_printf_putnstr(const char *str, int n, size_t *len);
-
+int			ft_printf_fd_get(void);
+void		ft_printf_fd_set(int fd);
 size_t		ft_printf(const char *str, ...);
 t_format	read_format(const char *format_str, va_list *argv, size_t *idx);
 t_fmt_func	match_function(const char *format_str, size_t *idx);
+size_t		ft_printf_base(int fd, const char *str, va_list *argv);
 
 #endif

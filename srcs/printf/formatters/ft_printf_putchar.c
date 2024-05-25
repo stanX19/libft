@@ -14,11 +14,11 @@
 
 void	ft_printf_putchar(char c, size_t *len)
 {
-	(*len) += write(1, &c, 1);
+	(*len) += write(ft_printf_fd_get(), &c, 1);
 }
 
 void	ft_printf_putnchar(char c, int n, size_t *len)
 {
 	while (n-- > 0)
-		*len += write(1, &c, 1);
+		*len += write(ft_printf_fd_get(), &c, 1);
 }

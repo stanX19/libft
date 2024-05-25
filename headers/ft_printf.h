@@ -17,5 +17,6 @@
 # include <stdlib.h>
 
 size_t		ft_printf(const char *str, ...);
+size_t		ft_dprintf(int fd, const char *str, ...);
 
 #endif

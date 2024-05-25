@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_putstr.c                                 :+:      :+:    :+:   */
+/*   ft_printf_globals.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
+/*   By: stan <shatan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/15 18:39:26 by stan              #+#    #+#             */
-/*   Updated: 2024/05/18 13:17:31 by shatan           ###   ########.fr       */
+/*   Created: 2024/05/25 18:08:08 by stan              #+#    #+#             */
+/*   Updated: 2024/05/25 18:12:08 by stan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf_private.h"
 
-void	ft_printf_putstr(const char *str, size_t *len)
+static int	*printf_fd(void)
 {
-	(*len) += write(1, str, ft_strlen(str));
+	static int	fd = 1;
+
+	return (&fd);
 }
 
-void	ft_printf_putnstr(const char *str, int n, size_t *len)
+int	ft_printf_fd_get(void)
 {
-	if (n <= 0)
-		return ;
-	(*len) += write(1, str, n);
+	return (*printf_fd());
+}
+
+void	ft_printf_fd_set(int fd)
+{
+	(*printf_fd()) = fd;
 }
