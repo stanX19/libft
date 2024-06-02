@@ -6,7 +6,7 @@
 /*   By: stan <shatan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 14:46:36 by shatan            #+#    #+#             */
-/*   Updated: 2024/05/24 14:23:20 by stan             ###   ########.fr       */
+/*   Updated: 2024/05/26 16:15:31 by stan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,5 +92,12 @@ char			**ft_str_to_args(const char *str, int *argc);
 t_base			ft_init_base(const char *base);
 long			ft_strtol(const char *_str, char **endptr, const char *_base);
 long double		ft_strtold(const char *nptr, char **endptr);
+
+void			**ft_calloc_2d(size_t height, size_t width, size_t pointer_size,
+					size_t	element_size);
+void			ft_free_2d(void **ptr, size_t len);
+void			ft_free_ptr_arr(void **arr, size_t len, void (*free_func)(void *));
+int				ft_2d_count_val(char **map, int width, int height, char target);
+int				ft_2d_count_charset(char **map, int width, int height, char *charset);
 
 #endif // COMMON

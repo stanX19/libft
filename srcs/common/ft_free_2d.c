@@ -1,21 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_free_2d.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stan <shatan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/24 21:43:42 by stan              #+#    #+#             */
-/*   Updated: 2024/05/26 16:12:31 by stan             ###   ########.fr       */
+/*   Created: 2024/02/02 14:39:12 by shatan            #+#    #+#             */
+/*   Updated: 2024/05/18 22:28:43 by stan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-# include "common.h"
-# include "ft_printf.h"
-# include "stringstream.h"
-# include "constants.h"
-# include "vector.h"
+#include "libft.h"
 
-#endif
+void	ft_free_2d(void **ptr, size_t len)
+{
+	size_t	idx;
+
+	idx = 0;
+	while (idx < len)
+	{
+		if (ptr[idx])
+			free(ptr[idx]);
+		++idx;
+	}
+	free(ptr);
+}
