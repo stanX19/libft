@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc_2d.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stan <shatan@student.42kl.edu.my>          +#+  +:+       +#+        */
+/*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 14:37:25 by shatan            #+#    #+#             */
-/*   Updated: 2024/05/18 22:28:29 by stan             ###   ########.fr       */
+/*   Updated: 2024/06/04 13:38:38 by shatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	**ft_calloc_2d(size_t height, size_t width, size_t pointer_size,
 	{
 		return (NULL);
 	}
-	ft_memset(ret, 0, sizeof(ret));
+	ft_memset(ret, 0, height * pointer_size);
 	i = 0;
 	while (i < height)
 	{

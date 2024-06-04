@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ss_create_from_fd.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stan <shatan@student.42kl.edu.my>          +#+  +:+       +#+        */
+/*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/02 14:05:34 by stan              #+#    #+#             */
-/*   Updated: 2024/06/02 14:09:55 by stan             ###   ########.fr       */
+/*   Updated: 2024/06/04 13:50:13 by shatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ t_stringstream	*ss_create_from_fd(int fd)
 
 	rd_size = 1;
 	ss = ss_create("");
+	errno = 0;
 	while (errno == 0 && rd_size != 0)
 	{
 		rd_size = read(fd, buffer, sizeof(buffer) - 1);
