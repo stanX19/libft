@@ -6,7 +6,7 @@
 /*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 14:46:36 by shatan            #+#    #+#             */
-/*   Updated: 2024/06/04 15:07:18 by shatan           ###   ########.fr       */
+/*   Updated: 2024/06/04 15:32:09 by shatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,9 +99,9 @@ void			ft_free_2d(void **ptr, size_t len);
 void			ft_free_ptr_arr(void **arr, size_t len,
 					void (*free_func)(void *));
 int				ft_str_count(const char *str, char target);
-int				ft_str_count_charset(char *str, char *charset);
+int				ft_str_count_charset(char *str, const char *charset);
 int				ft_2d_count_val(char **map, int width, int height, char target);
 int				ft_2d_count_charset(char **map, int width, int height,
-					char *charset);
+					const char *charset);
 
 #endif // COMMON

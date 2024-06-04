@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_2d_count_val.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stan <shatan@student.42kl.edu.my>          +#+  +:+       +#+        */
+/*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 14:39:06 by shatan            #+#    #+#             */
-/*   Updated: 2024/05/26 16:14:58 by stan             ###   ########.fr       */
+/*   Updated: 2024/06/04 15:32:13 by shatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	ft_2d_count_val(char **map, int width, int height, char target)
 	}
 	return (count);
 }
-int	ft_2d_count_charset(char **map, int width, int height, char *charset)
+int	ft_2d_count_charset(char **map, int width, int height, const char *charset)
 {
 	int	count;
 	int	j;
