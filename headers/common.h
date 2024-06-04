@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   common.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stan <shatan@student.42kl.edu.my>          +#+  +:+       +#+        */
+/*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 14:46:36 by shatan            #+#    #+#             */
-/*   Updated: 2024/05/26 16:15:31 by stan             ###   ########.fr       */
+/*   Updated: 2024/06/04 15:07:18 by shatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 # include <errno.h>
 # include <fcntl.h>
 # include <limits.h>
+# include <signal.h>
 # include <stdarg.h>
 # include <stdbool.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
-# include <signal.h>
 
 typedef struct s_base
 {
@@ -94,10 +94,14 @@ long			ft_strtol(const char *_str, char **endptr, const char *_base);
 long double		ft_strtold(const char *nptr, char **endptr);
 
 void			**ft_calloc_2d(size_t height, size_t width, size_t pointer_size,
-					size_t	element_size);
+					size_t element_size);
 void			ft_free_2d(void **ptr, size_t len);
-void			ft_free_ptr_arr(void **arr, size_t len, void (*free_func)(void *));
+void			ft_free_ptr_arr(void **arr, size_t len,
+					void (*free_func)(void *));
+int				ft_str_count(const char *str, char target);
+int				ft_str_count_charset(char *str, char *charset);
 int				ft_2d_count_val(char **map, int width, int height, char target);
-int				ft_2d_count_charset(char **map, int width, int height, char *charset);
+int				ft_2d_count_charset(char **map, int width, int height,
+					char *charset);
 
 #endif // COMMON
