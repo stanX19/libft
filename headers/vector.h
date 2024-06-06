@@ -8,6 +8,7 @@ typedef struct s_vec2
 }						t_vec2;
 
 t_vec2					vec2_add(t_vec2 v1, t_vec2 v2);
+double					vec2_hypot(t_vec2 v);
 
 
 #endif  //VECTOR
