@@ -6,7 +6,7 @@
 /*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 14:36:37 by shatan            #+#    #+#             */
-/*   Updated: 2024/06/06 15:36:52 by shatan           ###   ########.fr       */
+/*   Updated: 2024/06/10 15:25:11 by shatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 double	vec2_hypot(t_vec2 v)
 {
-	return ft_sqrt(v.x * v.x + v.y * v.y);
+	return (ft_sqrt(v.x * v.x + v.y * v.y));
 }
