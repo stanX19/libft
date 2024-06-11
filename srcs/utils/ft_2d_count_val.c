@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_2d_count_val.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
+/*   By: stan <shatan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 14:39:06 by shatan            #+#    #+#             */
-/*   Updated: 2024/06/10 15:25:03 by shatan           ###   ########.fr       */
+/*   Updated: 2024/06/11 13:32:49 by stan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_2d_count_val(char **map, int width, int height, char target)
+int	ft_2d_count_val(char *const*map, int width, int height, char target)
 {
 	int	count;
 	int	j;
@@ -34,7 +34,7 @@ int	ft_2d_count_val(char **map, int width, int height, char target)
 	return (count);
 }
 
-int	ft_2d_count_charset(char **map, int width, int height, const char *charset)
+int	ft_2d_count_charset(char *const*map, int width, int height, const char *charset)
 {
 	int	count;
 	int	j;

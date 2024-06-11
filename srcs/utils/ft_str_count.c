@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_str_count.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
+/*   By: stan <shatan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 15:02:26 by shatan            #+#    #+#             */
-/*   Updated: 2024/06/04 15:34:21 by shatan           ###   ########.fr       */
+/*   Updated: 2024/06/11 13:33:19 by stan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_str_count(const char *str, char target)
 	}
 	return (count);
 }
-int	ft_str_count_charset(char *str, const char *charset)
+int	ft_str_count_charset(const char *str, const char *charset)
 {
 	int	count;
 
