@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ss_create_from_fd.c                                :+:      :+:    :+:   */
+/*   ft_mem_is_zero.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stan <shatan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/02 14:05:34 by stan              #+#    #+#             */
-/*   Updated: 2024/06/13 18:54:47 by stan             ###   ########.fr       */
+/*   Created: 2024/06/13 00:44:58 by stan              #+#    #+#             */
+/*   Updated: 2024/06/13 01:04:57 by stan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stringstream_private.h"
+#include "libft.h"
 
-t_stringstream	*ss_create_from_fd(int fd)
+bool	ft_mem_is_zero(const void *p, size_t n)
 {
-	char			buffer[4096];
-	ssize_t			rd_size;
-	t_stringstream	*ss;
+	unsigned char	*s;
 
-	rd_size = 1;
-	ss = ss_create("");
-	errno = 0;
-	while (errno == 0 && rd_size != 0)
-	{
-		rd_size = read(fd, buffer, sizeof(buffer) - 1);
-		buffer[rd_size] = '\0';
-		ss_append(ss, buffer);
-	}
-	return (ss);
+	if (n == 0)
+		return (true);
+	s = (unsigned char *)p;
+	while (--n && *s == '\0')
+		++s;
+	return (*s == '\0');
 }

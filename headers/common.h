@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   common.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
+/*   By: stan <shatan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 14:46:36 by shatan            #+#    #+#             */
-/*   Updated: 2024/06/12 15:33:53 by shatan           ###   ########.fr       */
+/*   Updated: 2024/06/13 00:54:01 by stan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ char			*ft_strchr(const char *s, int c);
 void			*ft_memmove(void *dst, const void *src, size_t len);
 int				ft_memcmp(const void *s1, const void *s2, size_t n);
 void			*ft_memchr(const void *s, int c, size_t n);
+bool			ft_mem_is_zero(const void *p, size_t n);
 char			*ft_strnstr(const char *haystack, const char *needle,
 					size_t len);
 int				ft_atoi(const char *str);
