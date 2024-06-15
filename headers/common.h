@@ -6,7 +6,7 @@
 /*   By: stan <shatan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 14:46:36 by shatan            #+#    #+#             */
-/*   Updated: 2024/06/13 00:54:01 by stan             ###   ########.fr       */
+/*   Updated: 2024/06/15 11:44:49 by stan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ void			*ft_memset(void *str, int c, size_t n);
 size_t			ft_strlen(const char *s);
 int				ft_toupper(int c);
 void			*ft_memcpy(void *dst, const void *src, size_t n);
+bool			ft_endswith(const char *str, const char *suffix);
 size_t			ft_strlcat(char *dst, const char *src, size_t dstsize);
 char			*ft_strcpy(char *dst, const char *src);
 size_t			ft_strlcpy(char *dst, const char *src, size_t dstsize);
