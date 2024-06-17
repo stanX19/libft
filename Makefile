@@ -5,7 +5,7 @@ OBJDIR		= objs
 OBJDIRS		= $(sort $(dir $(OBJS)))
 OBJS		= $(subst $(SRCDIR),$(OBJDIR),$(subst .c,.o,$(SRCS)))
 
-INCLUDE_DIR	= 
+INCLUDE_DIR	=
 HEADER_DIR	= headers
 HEADERS		:= $(shell find $(HEADER_DIR) -name '*.h') #$(shell find $(INCLUDE_DIR) -name '*.h')
 HEADERS_INC	= $(addprefix -I,$(sort $(dir $(HEADERS))))
@@ -15,14 +15,14 @@ LIBS		= $(PRINTFLIB)
 IFLAGS		:= -I. $(HEADERS_INC)
 
 CC			= gcc
-CFLAGS		= -Wall -Wextra -Werror -fsanitize=address -g3
+CFLAGS		= -Wall -Wextra -Werror #-fsanitize=address -g3
 AR			= ar -rcs
 RM			= rm -rf
 UP			= \033[1A
 FLUSH		= \033[2K
 
 NAME		= libft.a
-ARGV		= 
+ARGV		=
 
 # run: all
 # 	$(CC) $(CFLAGS) $(IFLAGS) main.c $(NAME)
