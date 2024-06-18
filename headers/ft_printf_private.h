@@ -12,18 +12,12 @@
 
 #ifndef FT_PRINTF_PRIVATE_H
 # define FT_PRINTF_PRIVATE_H
-# include "../libft/libft.h"
+# include "libft.h"
 # include "ft_printf.h"
 # include <stdarg.h>
 # include <stdlib.h>
 # include <unistd.h>
 # define F_COUNT 25
-
-# ifdef __APPLE__
-#  define IS_APPLE 1
-# else
-#  define IS_APPLE 0
-# endif
 
 typedef struct s_format
 {
