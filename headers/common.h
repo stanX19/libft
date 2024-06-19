@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   common.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
+/*   By: stan <shatan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 14:46:36 by shatan            #+#    #+#             */
-/*   Updated: 2024/06/18 16:16:07 by shatan           ###   ########.fr       */
+/*   Updated: 2024/06/19 21:35:01 by stan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ void			ft_tokens_free(char **tokens);
 size_t			ft_tokens_len(const char **tokens);
 char			*ft_tokens_join(const char **tokens, size_t len,
 					const char *sep);
-char			**ft_str_to_args(const char *str, int *argc);
+char			**ft_str_to_argv(const char *str, int *argc);
 t_base			ft_init_base(const char *base);
 long			ft_strtol(const char *_str, char **endptr, const char *_base);
 long double		ft_strtold(const char *nptr, char **endptr);
@@ -108,5 +108,7 @@ int				ft_2d_count_val(char *const*map, int width, int height,
 					char target);
 int				ft_2d_count_charset(char *const*map, int width, int height,
 					const char *charset);
+char			**ft_str_to_argv(const char *str, int *argc);
+void			ft_str_append(char **strptr, char *add);
 
 #endif // COMMON
