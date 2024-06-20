@@ -3,23 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_str_insert.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
+/*   By: stan <shatan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 14:02:45 by shatan            #+#    #+#             */
-/*   Updated: 2024/06/20 14:14:53 by shatan           ###   ########.fr       */
+/*   Updated: 2024/06/20 23:25:21 by stan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_str_insert(char **strptr, char *inserted, int idx)
+char	*ft_str_insert(char **strptr, char *inserted, size_t idx)
 {
 	char	*new_str;
 	int		orig_len;
 	int		ins_len;
 	int		new_len;
 
-	if (strptr == NULL || *strptr == NULL || inserted == NULL || idx < 0
+	if (strptr == NULL || *strptr == NULL || inserted == NULL
 		|| idx > ft_strlen(*strptr))
 	{
 		return (NULL);

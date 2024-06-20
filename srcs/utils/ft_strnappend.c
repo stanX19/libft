@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tokens_join.c                                   :+:      :+:    :+:   */
+/*   ft_strnappend.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stan <shatan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/04 12:24:47 by stan              #+#    #+#             */
-/*   Updated: 2024/06/20 22:50:31 by stan             ###   ########.fr       */
+/*   Created: 2024/06/19 21:32:04 by stan              #+#    #+#             */
+/*   Updated: 2024/06/20 23:41:37 by stan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_tokens_join(const char **tokens, size_t len, const char *sep)
+// if this seg faults, make sure
+// n does not count strptr in
+// the arguments are actually str
+void	ft_strnappend(size_t n, char **strptr, ...)
 {
-	size_t	i;
-	char	*ret;
+	va_list	argv;
 
-	i = 0;
-	ret = ft_calloc(sizeof(char), 1);
-	if (len <= 0)
-		return (ret);
-	ft_str_append(&ret, tokens[i++]);
-	while (i < len)
-	{
-		ft_str_append(&ret, sep);
-		ft_str_append(&ret, tokens[i]);
-		++i;
-	}
-	return (ret);
+	if (n == 0 || !strptr || !*strptr)
+		return ;
+	va_start(argv, strptr);
+	while (n--)
+		ft_str_append(strptr, va_arg(argv, char *));
+	va_end(argv);
 }
