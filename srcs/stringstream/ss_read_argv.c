@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ss_read_argv.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stan <shatan@student.42kl.edu.my>          +#+  +:+       +#+        */
+/*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 15:50:48 by shatan            #+#    #+#             */
-/*   Updated: 2024/06/19 12:54:30 by stan             ###   ########.fr       */
+/*   Updated: 2024/06/20 12:46:55 by shatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,18 @@ static char	*find_start_of_line(char *newpos)
 }
 
 // inside of '', no escape
-// inside of "", escape \" only
+// inside of "", escape \ and " only, 
 // outside of quote, escape everything
 static char	get_word_helper(char **pos, int i, char *quote)
 {
 	char	c;
 
 	c = (*pos)[i];
-	if (c == '\\' && *quote != '\''
-		&& (!*quote || ((*pos)[i + 1] == '"' && *quote == '"')))
+	if (c == '\\' && *quote == '\'')
+		return ('\'');
+	else if (c == '\\' && *quote == '"' && ft_strchr("\"\\", (*pos)[i + 1]))
+		return ((++(*pos))[i]);
+	else if (c == '\\' && !*quote)
 		return ((++(*pos))[i]);
 	else if (!*quote && (c == '"' || c == '\''))
 		*quote = c;

@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ss_recreate.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/04 16:52:08 by stan              #+#    #+#             */
-/*   Updated: 2024/06/20 13:59:32 by shatan           ###   ########.fr       */
+/*   Created: 2024/06/20 14:26:07 by shatan            #+#    #+#             */
+/*   Updated: 2024/06/20 14:36:48 by shatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "stringstream_private.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char *))
+// creates stringstring from str, the stored version is a copy from strdup
+t_stringstream	*ss_recreate(t_stringstream	*ss, const char *str)
 {
-	int		i;
-
-	i = 0;
-	if (!s)
-		return ;
-	while (s[i])
-	{
-		f(i, s + i);
-		++i;
-	}
+	if (!ss)
+		return NULL;
+	if (ss->str)
+		free(ss->str);
+	ss->str = ft_strdup(str);
+	ss->pos = ss->str;
+	ss->prev_pos = NULL;
+	if (!ss->str)
+		return (NULL);
+	return (ss);
 }

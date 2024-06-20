@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   common.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stan <shatan@student.42kl.edu.my>          +#+  +:+       +#+        */
+/*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 14:46:36 by shatan            #+#    #+#             */
-/*   Updated: 2024/06/20 10:03:18 by stan             ###   ########.fr       */
+/*   Updated: 2024/06/20 14:15:47 by shatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ bool			ft_endswith(const char *str, const char *suffix);
 size_t			ft_strlcat(char *dst, const char *src, size_t dstsize);
 char			*ft_strcpy(char *dst, const char *src);
 size_t			ft_strlcpy(char *dst, const char *src, size_t dstsize);
+char			*ft_strncpy(char *dest, const char *src, size_t n);
 int				ft_tolower(int c);
 char			*ft_strrchr(const char *s, int c);
 int				ft_strcmp(const char *s1, const char *s2);
@@ -110,5 +111,6 @@ int				ft_2d_count_charset(char *const*map, int width, int height,
 					const char *charset);
 char			**ft_str_to_argv(const char *str, int *argc);
 void			ft_str_append(char **strptr, const char *add);
+char			*ft_str_insert(char **strptr, char *inserted, int idx);
 
 #endif // COMMON
