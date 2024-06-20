@@ -6,7 +6,7 @@
 /*   By: stan <shatan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 14:46:36 by shatan            #+#    #+#             */
-/*   Updated: 2024/06/19 21:35:01 by stan             ###   ########.fr       */
+/*   Updated: 2024/06/20 10:03:18 by stan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,6 +109,6 @@ int				ft_2d_count_val(char *const*map, int width, int height,
 int				ft_2d_count_charset(char *const*map, int width, int height,
 					const char *charset);
 char			**ft_str_to_argv(const char *str, int *argc);
-void			ft_str_append(char **strptr, char *add);
+void			ft_str_append(char **strptr, const char *add);
 
 #endif // COMMON
