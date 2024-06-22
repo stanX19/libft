@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_append.c                                    :+:      :+:    :+:   */
+/*   ft_strpbrk.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/19 21:32:04 by stan              #+#    #+#             */
-/*   Updated: 2024/06/22 14:13:53 by shatan           ###   ########.fr       */
+/*   Created: 2024/06/22 14:27:16 by shatan            #+#    #+#             */
+/*   Updated: 2024/06/22 14:49:19 by shatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_str_append(char **ptr, const char *add)
+char	*ft_strpbrk(const char *s, const char *accept)
 {
-	char	*new;
-
-	if (*ptr == NULL)
+	if (!s || !accept)
+		return (NULL);
+	while (*s)
 	{
-		*ptr = ft_strdup(add);
-		return ;
+		if (ft_strchr(accept, *s))
+			return ((char *)s);
+		s++;
 	}
-	new = ft_strjoin(*ptr, add);
-	free(*ptr);
-	*ptr = new;
+	return (NULL);
 }

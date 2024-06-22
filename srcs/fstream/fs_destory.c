@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_append.c                                    :+:      :+:    :+:   */
+/*   fs_destory.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/19 21:32:04 by stan              #+#    #+#             */
-/*   Updated: 2024/06/22 14:13:53 by shatan           ###   ########.fr       */
+/*   Created: 2024/06/22 14:15:25 by shatan            #+#    #+#             */
+/*   Updated: 2024/06/22 17:45:52 by shatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_str_append(char **ptr, const char *add)
+void	fs_destroy(t_fstream *fs)
 {
-	char	*new;
-
-	if (*ptr == NULL)
-	{
-		*ptr = ft_strdup(add);
+	if (!fs)
 		return ;
-	}
-	new = ft_strjoin(*ptr, add);
-	free(*ptr);
-	*ptr = new;
+	if (fs->fd >= 0)
+		close(fs->fd);
+	if (fs->buf != NULL)
+		free(fs->buf);
+	free(fs);
 }

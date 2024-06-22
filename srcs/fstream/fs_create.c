@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_append.c                                    :+:      :+:    :+:   */
+/*   fs_create.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/19 21:32:04 by stan              #+#    #+#             */
-/*   Updated: 2024/06/22 14:13:53 by shatan           ###   ########.fr       */
+/*   Created: 2024/06/22 14:12:01 by shatan            #+#    #+#             */
+/*   Updated: 2024/06/22 15:31:03 by shatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_str_append(char **ptr, const char *add)
+t_fstream	*fs_create(const char *path)
 {
-	char	*new;
+	t_fstream	*fs;
 
-	if (*ptr == NULL)
+	fs = (t_fstream *)malloc(sizeof(t_fstream));
+	if (!fs)
+		return (NULL);
+	fs->fd = open(path, O_RDONLY);
+	if (fs->fd == -1)
 	{
-		*ptr = ft_strdup(add);
-		return ;
+		free(fs);
+		return (NULL);
 	}
-	new = ft_strjoin(*ptr, add);
-	free(*ptr);
-	*ptr = new;
+	fs->buf = (char *)ft_calloc(sizeof(char), 1);
+	return (fs);
 }

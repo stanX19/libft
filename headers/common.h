@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   common.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stan <shatan@student.42kl.edu.my>          +#+  +:+       +#+        */
+/*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 14:46:36 by shatan            #+#    #+#             */
-/*   Updated: 2024/06/20 23:23:54 by stan             ###   ########.fr       */
+/*   Updated: 2024/06/22 14:27:53 by shatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ int				ft_strncmp(const char *s1, const char *s2, size_t n);
 bool			ft_strequ(const char *s1, const char *s2);
 bool			ft_strnequ(const char *s1, const char *s2, size_t n);
 char			*ft_strchr(const char *s, int c);
+char			*ft_strpbrk(const char *s, const char *charset);
 void			*ft_memmove(void *dst, const void *src, size_t len);
 int				ft_memcmp(const void *s1, const void *s2, size_t n);
 void			*ft_memchr(const void *s, int c, size_t n);
@@ -112,7 +113,7 @@ int				ft_2d_count_charset(char *const*map, int width, int height,
 					const char *charset);
 char			**ft_str_to_argv(const char *str, int *argc);
 void			ft_str_append(char **strptr, const char *add);
-void			ft_strnappend(size_t n, char **strptr, ...);
+void			ft_strnappend(char **strptr, size_t n, ...);
 char			*ft_str_insert(char **strptr, char *inserted, size_t idx);
 
 #endif // COMMON
