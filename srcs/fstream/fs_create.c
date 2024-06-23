@@ -6,7 +6,7 @@
 /*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/22 14:12:01 by shatan            #+#    #+#             */
-/*   Updated: 2024/06/22 15:31:03 by shatan           ###   ########.fr       */
+/*   Updated: 2024/06/23 13:06:33 by shatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,11 @@ t_fstream	*fs_create(const char *path)
 		return (NULL);
 	}
 	fs->buf = (char *)ft_calloc(sizeof(char), 1);
+	if (!fs->buf)
+	{
+		close(fs->fd);
+		free(fs);
+		return (NULL);
+	}
 	return (fs);
 }
