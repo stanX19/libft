@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tokens_join.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stan <shatan@student.42kl.edu.my>          +#+  +:+       +#+        */
+/*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 12:24:47 by stan              #+#    #+#             */
-/*   Updated: 2024/06/20 22:50:31 by stan             ###   ########.fr       */
+/*   Updated: 2024/06/26 14:06:14 by shatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_tokens_join(const char **tokens, size_t len, const char *sep)
+char	*ft_tokens_join(char *const*tokens, size_t len, const char *sep)
 {
 	size_t	i;
 	char	*ret;

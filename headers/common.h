@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   common.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stan <shatan@student.42kl.edu.my>          +#+  +:+       +#+        */
+/*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 14:46:36 by shatan            #+#    #+#             */
-/*   Updated: 2024/06/25 18:34:26 by stan             ###   ########.fr       */
+/*   Updated: 2024/06/26 14:05:56 by shatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,8 +92,8 @@ void			ft_char_swap(char *a, char *b);
 char			*ft_strrev(char *s);
 char			*ft_strnrev(char *s, size_t n);
 void			ft_tokens_free(char **tokens);
-size_t			ft_tokens_len(const char **tokens);
-char			*ft_tokens_join(const char **tokens, size_t len,
+size_t			ft_tokens_len(char *const*tokens);
+char			*ft_tokens_join(char *const*tokens, size_t len,
 					const char *sep);
 char			**ft_str_to_argv(const char *str, int *argc);
 t_base			ft_init_base(const char *base);

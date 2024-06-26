@@ -6,7 +6,7 @@
 /*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 15:50:48 by shatan            #+#    #+#             */
-/*   Updated: 2024/06/20 12:46:55 by shatan           ###   ########.fr       */
+/*   Updated: 2024/06/26 13:47:36 by shatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static char	get_word_helper(char **pos, int i, char *quote)
 	char	c;
 
 	c = (*pos)[i];
-	if (c == '\\' && *quote == '\'')
+	if (c == '\\' && *quote == '\'' && (*pos)[i + 1] == '\'')
 		return ('\'');
 	else if (c == '\\' && *quote == '"' && ft_strchr("\"\\", (*pos)[i + 1]))
 		return ((++(*pos))[i]);
