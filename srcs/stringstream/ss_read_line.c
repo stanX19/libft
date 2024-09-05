@@ -6,7 +6,7 @@
 /*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 15:50:48 by shatan            #+#    #+#             */
-/*   Updated: 2024/06/18 18:00:36 by shatan           ###   ########.fr       */
+/*   Updated: 2024/09/05 16:00:13 by shatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,18 @@ static char	*find_end_of_line(char *newpos, const char *seps)
 	return (newpos);
 }
 
-// ss: stringstream object, line: pointer to str, seps: seperating charset
-// success	:	return ss,		line is malloced str,	errno = 0
-// eof		:	return NULL,	line is NULL,			errno = 0
+/**
+ss_read_line - Reads the next line from using specified separators.
+@ss: Pointer to the stringstream object.
+@line: Pointer to a char* where the read line will be stored (allocated by the function).
+@seps: A string containing the separator characters used to split lines.
+
+Return:
+  - On success: Returns the updated stringstream object, *line will point to the 
+                newly allocated string containing the extracted line, and errno = 0.
+  - On end-of-file (EOF): Returns NULL, *line will be set to NULL, and errno = 0.
+ */
+
 t_stringstream	*ss_read_line(t_stringstream *ss, char **line, const char *seps)
 {
 	char	*start;
